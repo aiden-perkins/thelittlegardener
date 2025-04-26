@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Text, View, Button, Image, StyleSheet, ActivityIndicator, Alert, Platform, TouchableHighlight, FlatList } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
-import styles from './styles/Home.module.css';
 
 const HARDCODED_PROMPT = "Tell me exactly what type of plant this is, only give me that and nothing else.";
 
@@ -19,7 +18,6 @@ export default function Index() {
             return;
         }
     }
-
     try {
         let result = await ImagePicker.launchImageLibraryAsync({
             mediaTypes: ImagePicker.MediaTypeOptions.Images,
@@ -113,10 +111,10 @@ export default function Index() {
 
   return (
     <View style={homeStyles.container}>
-      <div className={styles.title}>Your Garden</div>
+      <Text style={homeStyles.title}>Your Garden</Text>
 
       {!image && !isLoading && !error && !apiResponse && (
-        <Text className={styles.placeholderText}>No growths in your garden yet.</Text>
+        <Text style={homeStyles.placeholderText}>No growths in your garden yet.</Text>
       )}
 
     <FlatList
@@ -153,21 +151,21 @@ export default function Index() {
       )}
 
       {isLoading && (
-        <View className={styles.statusContainer}>
+        <View style={homeStyles.statusContainer}>
           <ActivityIndicator size="large" color="#0000ff" />
-          <Text className={styles.statusText}>Analyzing, please wait...</Text>
+          <Text style={homeStyles.statusText}>Analyzing, please wait...</Text>
         </View>
       )}
 
       {error && (
-        <View className={styles.statusContainer}>
-          <Text className={styles.errorText}>Error: {error}</Text>
+        <View style={homeStyles.statusContainer}>
+          <Text style={homeStyles.errorText}>Error: {error}</Text>
         </View>
       )}
 
       {apiResponse && (
-        <View className={styles.statusContainer}>
-          <Text className={styles.responseText}>Analysis Result:</Text>
+        <View style={homeStyles.statusContainer}>
+          <Text style={homeStyles.responseText}>Analysis Result:</Text>
           <Text>{apiResponse}</Text>
         </View>
       )}
@@ -183,7 +181,9 @@ const homeStyles = StyleSheet.create({
     backgroundColor: 'white', // Set the background color to white
     alignItems: 'center',
     justifyContent: 'center',
-    gap: 12
+    gap: 12,
+    paddingTop: 50,
+    paddingBottom: 50
   },
   buttonContainer: {
     backgroundColor: '#F1EB91',
@@ -219,10 +219,61 @@ const homeStyles = StyleSheet.create({
     borderColor: '#ccc',
   },
   imageContainer: {
-    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   gridImage: {
     width: 160,
     height: 160
+  },
+  // container: {
+  //   flex: 1,
+  //   flexDirection: 'column',
+  //   alignItems: 'center',
+  //   justifyContent: 'flex-start', // Align items to the top
+  //   paddingTop: 50, // Add padding at the top
+  //   paddingLeft: 20,
+  //   paddingRight: 20,
+  //   backgroundColor: 'white', // Set background color
+  // },
+  title: {
+    color: '#5167F2',
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 20,
+  },
+  // image: {
+  //   width: 300,
+  //   height: 300,
+  //   marginTop: 20,
+  //   marginBottom: 20,
+  //   borderWidth: 1,
+  //   borderColor: '#ccc',
+  // },
+  statusContainer: {
+    marginTop: 20,
+    flexDirection: 'column',
+    alignItems: 'center',
+    padding: 10,
+    width: '90%',
+  },
+  statusText: {
+    marginTop: 10,
+    fontSize: 16,
+  },
+  errorText: {
+    color: 'red',
+    fontSize: 16,
+    textAlign: 'center',
+  },
+  responseText: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 10,
+  },
+  placeholderText: {
+    marginTop: 30,
+    fontSize: 16,
+    color: '#888',
   },
 });
