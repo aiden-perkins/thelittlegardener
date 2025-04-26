@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Text, View, StyleSheet, TextInput, TouchableOpacity, Keyboard, ActivityIndicator, FlatList } from 'react-native';
+import { Text, View, StyleSheet, TextInput, TouchableOpacity, Keyboard, ActivityIndicator, FlatList, TouchableHighlight } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import styles from '../styles/Search.module.css';
 
 interface Plant {
   id: number;
@@ -137,48 +138,53 @@ export default function SearchScreen() {
     };
 
     const renderPlantItem = ({ item }: { item: Plant }) => (
-        <View style={styles.plantItem}>
+        <View style={searchStyles.plantItem}>
+            <div className={styles.flexSpace}>
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                 {item.image_url ? (
                     <img 
                         src={item.image_url} 
-                        style={{ width: 50, height: 50, marginRight: 10, borderRadius: 4 }} 
+                        style={{ width: 64, height: 64, marginRight: 10, borderRadius: 4 }} 
                     />
                 ) : (
-                    <View style={{ width: 50, height: 50, marginRight: 10, backgroundColor: '#eee', borderRadius: 4, alignItems: 'center', justifyContent: 'center' }}>
+                    <View style={{ width: 64, height: 64, marginRight: 10, backgroundColor: '#eee', borderRadius: 4, alignItems: 'center', justifyContent: 'center' }}>
                         <Ionicons name="leaf-outline" size={24} color="#bbb" />
                     </View>
                 )}
                 <View>
-                    <Text style={styles.plantName}>{item.name || 'N/A'}</Text>
-                    <Text style={styles.plantDetail}>Scientific Name: {item.scientific_name || 'N/A'}</Text>
-                    <Text style={styles.plantDetail}>Family: {item.family || 'N/A'}</Text>
+                    <Text style={searchStyles.plantName}>{item.name || 'N/A'}</Text>
+                    <Text style={searchStyles.plantDetail}>Scientific Name: {item.scientific_name || 'N/A'}</Text>
+                    <Text style={searchStyles.plantDetail}>Family: {item.family || 'N/A'}</Text>
                 </View>
             </View>
+                <TouchableHighlight style={searchStyles.addButton} onPress={() => console.log('placeholder onpress')}>
+                    <Text style={searchStyles.buttonText}>Add to garden</Text>
+                </TouchableHighlight>
+            </div>
         </View>
     );
 
     const renderListFooter = () => {
         if (!isSearching && loading && currentPage > 0) {
-            return <ActivityIndicator size="large" color="#333" style={styles.footerLoading} />;
+            return <ActivityIndicator size="large" color="#333" style={searchStyles.footerLoading} />;
         }
         if (!isSearching && !hasMorePages && displayedPlants.length > 0) {
-             return <Text style={styles.endOfListText}>End of Plant List</Text>;
+             return <Text style={searchStyles.endOfListText}>End of Plant List</Text>;
         }
         return null;
     };
 
     return (
-        <View style={styles.screenContainer}>
-            <View style={styles.searchBarContainer}>
+        <View style={searchStyles.screenContainer}>
+            <View style={searchStyles.searchBarContainer}>
                 <Ionicons
                     name="search"
                     size={28}
                     color="#333"
-                    style={styles.searchIcon}
+                    style={searchStyles.searchIcon}
                 />
                 <TextInput
-                    style={styles.searchInput}
+                    style={searchStyles.searchInput}
                     placeholder="Search plants by name..."
                     placeholderTextColor="#555"
                     value={searchQuery}
@@ -195,22 +201,22 @@ export default function SearchScreen() {
                     editable={!loading || (loading && isSearching)}
                 />
                 {searchQuery.length > 0 && (!loading || isSearching) && (
-                    <TouchableOpacity onPress={handleClearSearch} style={styles.clearIcon}>
+                    <TouchableOpacity onPress={handleClearSearch} style={searchStyles.clearIcon}>
                         <Ionicons name="close-circle" size={20} color="#888" />
                     </TouchableOpacity>
                 )}
                 {loading && isSearching && searchQuery.length > 0 && (
-                    <ActivityIndicator size="small" color="#333" style={styles.loadingIndicator} />
+                    <ActivityIndicator size="small" color="#333" style={searchStyles.loadingIndicator} />
                 )}
             </View>
-            {error && <Text style={styles.errorText}>{error}</Text>}
+            {error && <Text style={searchStyles.errorText}>{error}</Text>}
             <FlatList
                 data={displayedPlants}
                 renderItem={renderPlantItem}
                 keyExtractor={(item) => item.id.toString()}
-                style={styles.resultsList}
-                contentContainerStyle={styles.resultsListContent}
-                ListEmptyComponent={!loading ? <Text style={styles.noResultsText}>{isSearching ? 'No results found.' : 'No plants to display.'}</Text> : null}
+                style={searchStyles.resultsList}
+                contentContainerStyle={searchStyles.resultsListContent}
+                ListEmptyComponent={!loading ? <Text style={searchStyles.noResultsText}>{isSearching ? 'No results found.' : 'No plants to display.'}</Text> : null}
                 onEndReached={handleLoadMore}
                 onEndReachedThreshold={0.5}
                 ListFooterComponent={renderListFooter}
@@ -219,7 +225,7 @@ export default function SearchScreen() {
     );
 }
 
-const styles = StyleSheet.create({
+const searchStyles = StyleSheet.create({
   screenContainer: {
     flex: 1,
     backgroundColor: 'white',
@@ -235,11 +241,7 @@ const styles = StyleSheet.create({
     paddingVertical: 8, // Adjusted padding
     width: '100%',
     marginBottom: 15,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.18,
-    shadowRadius: 1.00,
-    elevation: 2,
+    marginTop: 24
   },
   searchIcon: {
     marginRight: 10,
@@ -265,7 +267,7 @@ const styles = StyleSheet.create({
         paddingBottom: 20, // Add padding at the bottom of the list
     },
   plantItem: {
-    backgroundColor: '#F8F8F8',
+    backgroundColor: '#F5F7FF',
     padding: 15,
     borderRadius: 8,
     marginBottom: 10,
@@ -275,7 +277,7 @@ const styles = StyleSheet.create({
   plantName: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#2E7D32', // Darker green for name
+    color: '#5167F2', // Darker green for name
     marginBottom: 4,
   },
   plantDetail: {
@@ -304,4 +306,16 @@ const styles = StyleSheet.create({
       color: '#888',
       fontSize: 14,
     },
+    addButton: {
+        backgroundColor: '#F1EB91',
+        borderRadius: 100,
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    buttonText: {
+        fontSize: 16,
+        textAlign: 'center',
+        paddingVertical: 10,
+        paddingHorizontal: 20,
+    }
 });

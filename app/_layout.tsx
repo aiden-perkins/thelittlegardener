@@ -9,6 +9,38 @@ export default function RootLayout() {
     <>
       <Tabs>
         <Tabs.Screen
+            name="search/Search"
+            options={{
+              title: 'Search',
+              tabBarShowLabel: false,
+              headerShown: false,
+              tabBarIcon: ({focused}) => (
+                <View style={styles.iconContainer}>
+                <IonIcons
+                  name="search"
+                  size={24}
+                  color={"black"}
+                  style={styles.svgForeground}/>
+                {focused ?
+                  <Svg
+                  width={36}
+                  height={40}
+                  viewBox="0 0 64 81"
+                  fill="none"
+                  style={styles.svgBackground}
+                >
+                  <Path
+                    d="M32 0C49.6729 2.78322e-05 63.9998 14.3262 64 31.999V80.9814H0V31.999C0.000229513 14.3261 14.3271 0 32 0Z"
+                    fill="#C9E6FF"
+                  />
+                </Svg>
+                : <></>
+                }
+                </View>
+              ),
+            }}
+          />
+        <Tabs.Screen
           name="index"
           options={{
             title: 'Home',
@@ -74,13 +106,6 @@ export default function RootLayout() {
               </View>
             ),
             headerShown: false,
-          }}
-        />
-        <Tabs.Screen
-          name="search/Search"
-          options={{
-            title: 'Search',
-            tabBarIcon: () => null, // Add an icon here if desired
           }}
         />
       </Tabs>

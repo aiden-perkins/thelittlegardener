@@ -1,5 +1,5 @@
 :root {
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .container {
@@ -11,6 +11,12 @@
     padding-left: 20px;
     padding-right: 20px;
   }
+
+.flexSpace {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
   
 .title {
     color: #5167F2;
