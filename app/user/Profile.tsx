@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, Button, Image, StyleSheet, TouchableHighlight } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import styles from '../styles/Profile.module.css';
+import bcrypt from 'bcryptjs';
+import { Ionicons } from '@expo/vector-icons';
 
 export default function ProfilePage() {
   const [mode, setMode] = useState<'initial' | 'login' | 'create'>('initial');
@@ -53,8 +54,11 @@ export default function ProfilePage() {
     try {
       const formData = new FormData();
       
+      const salt = await bcrypt.genSalt(10);
+      const hash = await bcrypt.hash(password, salt);
+      
       formData.append('username', username);
-      formData.append('password', password);
+      formData.append('password', hash);
       
       const uploadResponse = await fetch('/api/createaccount', {
         method: 'POST',
@@ -89,70 +93,78 @@ export default function ProfilePage() {
 
   if (isLoggedIn) {
     return (
-      <div className={styles.container}>
-        <div className={styles.profileWrapper}>
+      <View style={profileStyles.container}>
+        <View style={profileStyles.profileWrapper}>
           <Image source={require('../../assets/images/defaultprofile.jpg')}
               style={profileStyles.profileImage}/>
-          <div>
-            <div className={styles.title}>{username}</div>
+          <View>
+            <Text style={profileStyles.title}>{username}</Text>
             <Text>Plants: 0</Text>
-          </div>
-        </div>
-        <View className={styles.buttonContainer}>
+          </View>
+        </View>
+        <View style={profileStyles.buttonContainer}>
           <TouchableHighlight style={profileStyles.buttonContainerGreen}  onPress={handleLogout}>
               <Text style={profileStyles.buttonText}>Log out</Text>
           </TouchableHighlight>
         </View>
-      </div>
+      </View>
     );
   }
 
   return (
-    <div className={styles.container}>
+    <View style={profileStyles.container}>
       {mode === 'initial' ? (
-        <div>
-          <div className={styles.title}>Welcome to The Little Gardener!</div>
-          <div className={styles.buttonContainer}>
+        <View>
+          <Text style={profileStyles.title}>Welcome to The Little Gardener!</Text>
+          <View style={profileStyles.buttonContainer}>
             <TouchableHighlight onPress={() => setMode('login')} style={profileStyles.buttonContainerGreen}>
               <Text style={profileStyles.buttonText}>Log in</Text>
             </TouchableHighlight>
-          </div>
-          <div className={styles.buttonContainer}>
-            <TouchableHighlight onPress={() => setMode('create')} style={profileStyles.buttonContainer}>
+          </View>
+          <View style={profileStyles.buttonContainer}>
+            <TouchableHighlight onPress={() => setMode('create')} style={profileStyles.buttonContainerYellow}>
               <Text style={profileStyles.buttonText}>I'm a new gardener!</Text>
             </TouchableHighlight>
-          </div>
-        </div>
+          </View>
+        </View>
       ) : (
-        <div>
-          <div>
+        <View>
+          <View>
             <TextInput
-              className={styles.placeholderText}
+              // style={profileStyles.placeholderText}
               placeholder="Username"
               value={username}
               onChangeText={setUsername}
               style={profileStyles.inputField}
             />
-          </div>
-          <div>
+          </View>
+          <View>
             <TextInput
-              className={styles.placeholderText}
+              // style={profileStyles.placeholderText}
               placeholder="Password"
               value={password}
               onChangeText={setPassword}
               secureTextEntry
               style={profileStyles.inputField}
             />
-          </div>
-          <View className={styles.buttonContainer}>
+          </View>
+          <View style={profileStyles.buttonContainerRow}>
+            <TouchableHighlight onPress={() => setMode('initial')} style={profileStyles.buttonContainerGray}>
+              <Ionicons
+                name="arrow-back-outline"
+                size={24}
+                color={"black"}
+                style={{'margin': 8}}
+                />
+            </TouchableHighlight>
             <TouchableHighlight onPress={mode === 'login' ? handleLogin : handleCreateAccount} style={profileStyles.buttonContainerGreen}>
-              <Text style={profileStyles.buttonText}>{mode === 'login' ? 'Login' : 'Create Account'}</Text>
+              <Text style={profileStyles.buttonText}>{mode === 'login' ? 'Log in' : 'Create Account'}</Text>
             </TouchableHighlight>
           </View>
-          {error && <Text className={styles.errorText}>{error}</Text>}
-        </div>
+          {error && <Text style={profileStyles.errorText}>{error}</Text>}
+        </View>
       )}
-    </div>
+    </View>
   );
 }
 
@@ -162,7 +174,7 @@ const profileStyles = StyleSheet.create({
     height: 100,
     borderRadius: 100
   },
-  buttonContainer: {
+  buttonContainerYellow: {
     backgroundColor: '#F1EB91',
     borderRadius: 100,
     alignItems: 'center',
@@ -170,6 +182,12 @@ const profileStyles = StyleSheet.create({
   },
   buttonContainerGreen: {
     backgroundColor: '#BBEA9B',
+    borderRadius: 100,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  buttonContainerGray: {
+    backgroundColor: '#D9D9D9',
     borderRadius: 100,
     alignItems: 'center',
     justifyContent: 'center',
@@ -188,5 +206,76 @@ const profileStyles = StyleSheet.create({
     borderColor: '#D9D9D9',
     borderWidth: 1,
     borderRadius: 100
-  }
+  },
+  container: {
+    flex: 1,
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center', // Align items to the center
+    paddingTop: 50, // Add padding at the top
+    paddingLeft: 20,
+    paddingRight: 20,
+    backgroundColor: 'white',
+  },
+  profileWrapper: {
+    flexDirection: 'row', // Horizontal layout
+    alignItems: 'center',
+    gap: 24, // Spacing between items (React Native doesn't support `gap`, so use `margin` or `padding` manually if needed)
+    marginBottom: 20,
+  },
+  title: {
+    color: '#5167F2',
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 12,
+    textAlign: 'center',
+  },
+  buttonContainer: {
+    marginTop: 15,
+    marginBottom: 15,
+    flexDirection: 'column',
+    gap: 10, // React Native doesn't support `gap`, so use `marginBottom` for spacing between buttons
+  },
+  buttonContainerRow: {
+    marginTop: 15,
+    marginBottom: 15,
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    gap: 10, // React Native doesn't support `gap`, so use `marginBottom` for spacing between buttons
+  },
+  image: {
+    width: 300,
+    height: 300,
+    marginTop: 20,
+    marginBottom: 20,
+    borderWidth: 1,
+    borderColor: '#ccc',
+  },
+  statusContainer: {
+    marginTop: 20,
+    flexDirection: 'column',
+    alignItems: 'center',
+    padding: 10,
+    width: '90%',
+  },
+  statusText: {
+    marginTop: 10,
+    fontSize: 16,
+  },
+  errorText: {
+    color: 'red',
+    fontSize: 16,
+    textAlign: 'center',
+  },
+  responseText: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 10,
+  },
+  placeholderText: {
+    marginTop: 30,
+    fontSize: 16,
+    color: '#888',
+  },
 })
