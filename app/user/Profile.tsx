@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, Button, Image, StyleSheet, TouchableHighlight } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import bcrypt from 'bcryptjs';
 import { Ionicons } from '@expo/vector-icons';
 
 export default function ProfilePage() {
@@ -54,11 +53,8 @@ export default function ProfilePage() {
     try {
       const formData = new FormData();
       
-      const salt = await bcrypt.genSalt(10);
-      const hash = await bcrypt.hash(password, salt);
-      
       formData.append('username', username);
-      formData.append('password', hash);
+      formData.append('password', password);
       
       const uploadResponse = await fetch('/api/createaccount', {
         method: 'POST',
