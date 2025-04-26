@@ -27,7 +27,10 @@ export async function POST(request: Request): Promise<Response> {
       );
     }
 
-    const result = await User.insertOne({ username: username, password: password});
+    const salt = await bcrypt.genSalt(10);
+    const hash = await bcrypt.hash(password, salt);
+
+    const result = await User.insertOne({ username: username, password: hash});
     
     return Response.json(
       {
