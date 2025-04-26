@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, View, Button, Image, StyleSheet, ActivityIndicator, Alert, Platform, TouchableHighlight } from 'react-native';
+import { Text, View, Button, Image, StyleSheet, ActivityIndicator, Alert, Platform, TouchableHighlight, FlatList } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import styles from './styles/Home.module.css';
 
@@ -102,26 +102,54 @@ export default function Index() {
     }
   };
 
-  return (
-    <div className={styles.container}>
-      <div className={styles.title}>Plant Analyzer</div>
+  const imgUrls = [
+    "https://ibighit.com/txt/images/txt/main/kv-beomgyu-panic.png",
+    "https://ibighit.com/txt/images/txt/main/kv-beomgyu-panic.png",
+    "https://ibighit.com/txt/images/txt/main/kv-beomgyu-panic.png",
+    "https://ibighit.com/txt/images/txt/main/kv-beomgyu-panic.png",
+    "https://ibighit.com/txt/images/txt/main/kv-beomgyu-panic.png",
+    
+  ];
 
-      <View className={styles.buttonContainer}>
-          <Button title="Pick an Image" onPress={pickImage} />
-      </View>
+  return (
+    <View style={homeStyles.container}>
+      <div className={styles.title}>Your Garden</div>
+
+      {!image && !isLoading && !error && !apiResponse && (
+        <Text className={styles.placeholderText}>No growths in your garden yet.</Text>
+      )}
+
+    <FlatList
+      data={imgUrls}
+      keyExtractor={(item, index) => index.toString()}
+      numColumns={2} // Set the number of columns to 2
+      renderItem={({ item }) => (
+        <View style={homeStyles.imageContainer}>
+          <Image source={{ uri: item }} style={homeStyles.gridImage} />
+        </View>
+      )}
+    />
+
+      <TouchableHighlight style={homeStyles.buttonContainer} onPress={pickImage}>
+          <Text style={homeStyles.buttonText}>Add plant with image</Text>
+      </TouchableHighlight>
+
+      <TouchableHighlight style={homeStyles.buttonContainerGreen} onPress={pickImage}>
+          <Text style={homeStyles.buttonText}>Add plant with camera</Text>
+      </TouchableHighlight>
+
+      <TouchableHighlight style={homeStyles.buttonContainerGray} onPress={pickImage}>
+          <Text style={homeStyles.buttonText}>Add plant manually</Text>
+      </TouchableHighlight>
 
       {image && (
-          <Image source={{ uri: image.uri }} className={styles.image} resizeMode="contain" />
+          <Image source={{ uri: image.uri }} style={homeStyles.image} resizeMode="contain" />
       )}
 
       {image && (
-          <View className={styles.buttonContainer}>
-              <Button
-                  title="Analyze Plant"
-                  onPress={uploadImage}
-                  disabled={isLoading} // Disable button while loading
-              />
-          </View>
+          <TouchableHighlight style={homeStyles.buttonContainer} onPress={uploadImage}>
+              <Text style={homeStyles.buttonText}>Analyze Plant</Text>
+          </TouchableHighlight>
       )}
 
       {isLoading && (
@@ -144,9 +172,57 @@ export default function Index() {
         </View>
       )}
 
-      {!image && !isLoading && !error && !apiResponse && (
-        <Text className={styles.placeholderText}>Select an image to begin.</Text>
-      )}
-    </div>
+    </View>
   );
 }
+
+// for components that cannot be used w/ CSS modules
+const homeStyles = StyleSheet.create({
+  container: {
+    flex: 1, // Ensures the container takes up the full screen
+    backgroundColor: 'white', // Set the background color to white
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 12
+  },
+  buttonContainer: {
+    backgroundColor: '#F1EB91',
+    borderRadius: 100,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  buttonContainerGreen: {
+    backgroundColor: '#BBEA9B',
+    borderRadius: 100,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  buttonContainerGray: {
+    backgroundColor: '#D9D9D9',
+    borderRadius: 100,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  buttonText: {
+    fontSize: 16,
+    textAlign: 'center',
+    paddingVertical: 10, // Vertical padding
+    paddingHorizontal: 20, // Horizontal padding
+  },
+  image: {
+    width: 300,
+    height: 300,
+    marginTop: 20,
+    marginBottom: 20,
+    borderWidth: 1,
+    borderStyle: 'solid', // React Native doesn't support `border-style`, so this can be omitted
+    borderColor: '#ccc',
+  },
+  imageContainer: {
+    flex: 1,
+  },
+  gridImage: {
+    width: 160,
+    height: 160
+  },
+});
