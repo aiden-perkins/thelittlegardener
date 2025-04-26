@@ -1,0 +1,212 @@
+[
+    {
+        "id": 61,
+        "name": "Hogyoku Japanese Maple",
+        "image_url": "https://perenual.com/storage/species_image/61_acer_palmatum_hogyoku/og/2560px-Kyoto_Japan0431.jpg",
+        "scientific_name": "Acer palmatum 'Hogyoku'",
+        "family": "Sapindaceae"
+    },
+    {
+        "id": 62,
+        "name": "Hubb's Red Willow Japanese Maple",
+        "image_url": "https://perenual.com/storage/species_image/62_acer_palmatum_hubbs_red_willow/og/Acer_japonicum_rubra_leaves.jpg",
+        "scientific_name": "Acer palmatum 'Hubb's Red Willow'",
+        "family": null
+    },
+    {
+        "id": 63,
+        "name": "Iijima Sunago Japanese Maple",
+        "image_url": "https://perenual.com/storage/species_image/63_acer_palmatum_iijima_sunago/og/Acer_palmatum_27Oshio_beni27_-_JPG1.jpg",
+        "scientific_name": "Acer palmatum 'Iijima Sunago'",
+        "family": null
+    },
+    {
+        "id": 64,
+        "name": "Inaba Shidare Cutleaf Japanese Maple",
+        "image_url": "https://perenual.com/storage/species_image/64_acer_palmatum_inaba_shidare/og/2465696230_ab34a4a784_b.jpg",
+        "scientific_name": "Acer palmatum 'Inaba Shidare'",
+        "family": null
+    },
+    {
+        "id": 65,
+        "name": "Inazuma Japanese Maple",
+        "image_url": "https://perenual.com/storage/species_image/65_acer_palmatum_inazuma/og/Acer_palmatum_28Japanese_maple_tree29_3_284904402847329.jpg",
+        "scientific_name": "Acer palmatum 'Inazuma'",
+        "family": null
+    },
+    {
+        "id": 66,
+        "name": "Jiro Shidare Japanese Maple",
+        "image_url": "https://perenual.com/storage/species_image/66_acer_palmatum_jiro_shidare/og/Acer_palmatum_Eddisbury_-_Flickr_-_peganum.jpg",
+        "scientific_name": "Acer palmatum 'Jiro Shidare'",
+        "family": null
+    },
+    {
+        "id": 67,
+        "name": "Kagiri Nishiki Japanese Maple",
+        "image_url": "https://perenual.com/storage/species_image/67_acer_palmatum_kagiri_nishiki/og/800px-Acer_palmatum_27Kagiri-nishiki27_sunlit_branch.jpg",
+        "scientific_name": "Acer palmatum 'Kagiri Nishiki'",
+        "family": null
+    },
+    {
+        "id": 68,
+        "name": "Kamagata Japanese Maple",
+        "image_url": null,
+        "scientific_name": "Acer palmatum 'Kamagata'",
+        "family": null
+    },
+    {
+        "id": 69,
+        "name": "Kandy Kitchen Japanese Maple",
+        "image_url": "https://perenual.com/storage/species_image/69_acer_palmatum_kandy_kitchen/og/51150061025_29f690d490_b.jpg",
+        "scientific_name": "Acer palmatum 'Kandy Kitchen'",
+        "family": null
+    },
+    {
+        "id": 70,
+        "name": "Karasu Gawa Japanese Maple*",
+        "image_url": null,
+        "scientific_name": "Acer palmatum 'Karasu Gawa'",
+        "family": null
+    },
+    {
+        "id": 71,
+        "name": "Kasagi Yama Japanese Maple",
+        "image_url": null,
+        "scientific_name": "Acer palmatum 'Kasagi Yama'",
+        "family": null
+    },
+    {
+        "id": 72,
+        "name": "Katsura Japanese Maple",
+        "image_url": "https://perenual.com/storage/species_image/72_acer_palmatum_katsura/og/33974454551_0965ae099b_b.jpg",
+        "scientific_name": "Acer palmatum 'Katsura'",
+        "family": "Sapindaceae"
+    },
+    {
+        "id": 73,
+        "name": "Kiri Nishiki Japanese Maple",
+        "image_url": "https://perenual.com/storage/species_image/73_acer_palmatum_kiri_nishiki/og/Acer_palmatum_var._dissectum_Green_Mist_0zz.jpg",
+        "scientific_name": "Acer palmatum 'Kiri Nishiki'",
+        "family": null
+    },
+    {
+        "id": 74,
+        "name": "Kiyohime Japanese Maple",
+        "image_url": "https://perenual.com/storage/species_image/74_acer_palmatum_kiyohime/og/pexels-photo-5745584.jpg",
+        "scientific_name": "Acer palmatum 'Kiyohime'",
+        "family": null
+    },
+    {
+        "id": 75,
+        "name": "Koshibori Nishiki Japanese Maple*",
+        "image_url": null,
+        "scientific_name": "Acer palmatum 'Koshibori Nishiki'",
+        "family": null
+    },
+    {
+        "id": 76,
+        "name": "Koto No Ito Japanese Maple",
+        "image_url": "https://perenual.com/storage/species_image/76_acer_palmatum_koto_no_ito/og/Acer_palmatum_27Linearilobum27_JPG1L.jpg",
+        "scientific_name": "Acer palmatum 'Koto No Ito'",
+        "family": "Sapindaceae"
+    },
+    {
+        "id": 77,
+        "name": "Linearilobum Japanese Maple",
+        "image_url": "https://perenual.com/storage/species_image/77_acer_palmatum_linearilobum/og/3466572143_4470363413_b.jpg",
+        "scientific_name": "Acer palmatum 'Linearilobum'",
+        "family": null
+    },
+    {
+        "id": 78,
+        "name": "Margaret Bee Japanese Maple",
+        "image_url": "https://perenual.com/storage/species_image/78_acer_palmatum_margaret_bee/og/Acer_palmatum_28Japanese_maple_tree29_3_284904402847329.jpg",
+        "scientific_name": "Acer palmatum 'Margaret Bee'",
+        "family": null
+    },
+    {
+        "id": 79,
+        "name": "Mikawa Yatsubusa Japanese Maple",
+        "image_url": "https://perenual.com/storage/species_image/79_acer_palmatum_mikawa_yatsubusa/og/2560px-Acer_palmatum_27Kashima_Yatsubusa27_-_Asticou_Azalea_Garden_-_Northeast_Harbor2C_Maine_-_DSC03516.jpg",
+        "scientific_name": "Acer palmatum 'Mikawa Yatsubusa'",
+        "family": null
+    },
+    {
+        "id": 80,
+        "name": "Mikazuki Japanese Maple",
+        "image_url": null,
+        "scientific_name": "Acer palmatum 'Mikazuki'",
+        "family": null
+    },
+    {
+        "id": 81,
+        "name": "Moonfire Japanese Maple",
+        "image_url": "https://perenual.com/storage/species_image/81_acer_palmatum_moonfire/og/4846299174_5cb4e644ae_b.jpg",
+        "scientific_name": "Acer palmatum 'Moonfire'",
+        "family": null
+    },
+    {
+        "id": 82,
+        "name": "Nishiki Gawa Japanese Maple*",
+        "image_url": "https://perenual.com/storage/species_image/82_acer_palmatum_nishiki_gawa/og/pexels-photo-4977537.jpg",
+        "scientific_name": "Acer palmatum 'Nishiki Gawa'",
+        "family": "Sapindaceae"
+    },
+    {
+        "id": 83,
+        "name": "Nuresagi Japanese Maple",
+        "image_url": "https://perenual.com/storage/species_image/83_acer_palmatum_nuresagi/og/Acer_palmatum_27Nuresagi27_JPG1c.jpg",
+        "scientific_name": "Acer palmatum 'Nuresagi'",
+        "family": "Sapindaceae"
+    },
+    {
+        "id": 84,
+        "name": "Okagami Japanese Maple",
+        "image_url": "https://perenual.com/storage/species_image/84_acer_palmatum_okagami/og/4555737792_4363d30713_b.jpg",
+        "scientific_name": "Acer palmatum 'Okagami'",
+        "family": null
+    },
+    {
+        "id": 85,
+        "name": "Okushimo Japanese Maple",
+        "image_url": "https://perenual.com/storage/species_image/85_acer_palmatum_okushimo/og/27477811140_2298882b2f_b.jpg",
+        "scientific_name": "Acer palmatum 'Okushimo'",
+        "family": null
+    },
+    {
+        "id": 86,
+        "name": "Orange Dream Japanese Maple",
+        "image_url": "https://perenual.com/storage/species_image/86_acer_palmatum_orange_dream/og/2560px-Acer_palmatum_27Orange_Dream27_-_2020-05-08_-_Andy_Mabbett_-_13.jpg",
+        "scientific_name": "Acer palmatum 'Orange Dream'",
+        "family": null
+    },
+    {
+        "id": 87,
+        "name": "Orangeola Cutleaf Japanese Maple",
+        "image_url": "https://perenual.com/storage/species_image/87_acer_palmatum_orangeola/og/4714671587_8ecba52560_b.jpg",
+        "scientific_name": "Acer palmatum 'Orangeola'",
+        "family": null
+    },
+    {
+        "id": 88,
+        "name": "Oregon Sunset Japanese Maple",
+        "image_url": "https://perenual.com/storage/species_image/88_acer_palmatum_oregon_sunset/og/autumn-leaves-leaves-autumn-the-leaves-deciduous-nature.jpg",
+        "scientific_name": "Acer palmatum 'Oregon Sunset'",
+        "family": null
+    },
+    {
+        "id": 89,
+        "name": "Oridono Nishiki Japanese Maple*",
+        "image_url": "https://perenual.com/storage/species_image/89_acer_palmatum_oridono_nishiki/og/Acer_palmatum_Oridono_nishiki_0zz.jpg",
+        "scientific_name": "Acer palmatum 'Oridono Nishiki'",
+        "family": null
+    },
+    {
+        "id": 90,
+        "name": "Ornatum Japanese Maple*",
+        "image_url": "https://perenual.com/storage/species_image/90_acer_palmatum_ornatum/og/Acer_palmatum_var._dissectum_Ornatum_1zz.jpg",
+        "scientific_name": "Acer palmatum 'Ornatum'",
+        "family": null
+    }
+]

@@ -1,0 +1,212 @@
+[
+    {
+        "id": 7021,
+        "name": "scrub palmetto",
+        "image_url": null,
+        "scientific_name": "Sabal etonia",
+        "family": "Arecaceae"
+    },
+    {
+        "id": 7022,
+        "name": "dwarf palmetto",
+        "image_url": null,
+        "scientific_name": "Sabal minor",
+        "family": "Arecaceae"
+    },
+    {
+        "id": 7023,
+        "name": "rose gentian",
+        "image_url": null,
+        "scientific_name": "Sabatia angularis",
+        "family": "Gentianaceae"
+    },
+    {
+        "id": 7024,
+        "name": "Plymouth rose gentian",
+        "image_url": null,
+        "scientific_name": "Sabatia kennedyana",
+        "family": "Gentianaceae"
+    },
+    {
+        "id": 7025,
+        "name": "sugar cane",
+        "image_url": null,
+        "scientific_name": "Saccharum officinarum",
+        "family": "Poaceae"
+    },
+    {
+        "id": 7026,
+        "name": "plume grass",
+        "image_url": null,
+        "scientific_name": "Saccharum ravennae",
+        "family": "Poaceae"
+    },
+    {
+        "id": 7027,
+        "name": "arrowhead",
+        "image_url": null,
+        "scientific_name": "Sagittaria australis 'Benni' SILK STOCKINGS",
+        "family": "Alismataceae"
+    },
+    {
+        "id": 7028,
+        "name": "grassy arrowhead",
+        "image_url": null,
+        "scientific_name": "Sagittaria graminea",
+        "family": "Alismataceae"
+    },
+    {
+        "id": 7029,
+        "name": "broadleaf arrowhead",
+        "image_url": null,
+        "scientific_name": "Sagittaria latifolia",
+        "family": "Alismataceae"
+    },
+    {
+        "id": 7030,
+        "name": "African violet",
+        "image_url": null,
+        "scientific_name": "Saintpaulia ionantha",
+        "family": "Gesneriaceae"
+    },
+    {
+        "id": 7031,
+        "name": "white willow",
+        "image_url": null,
+        "scientific_name": "Salix alba",
+        "family": "Salicaceae"
+    },
+    {
+        "id": 7032,
+        "name": "coral bark willow",
+        "image_url": null,
+        "scientific_name": "Salix alba subsp. vitellina 'Britzensis'",
+        "family": "Salicaceae"
+    },
+    {
+        "id": 7033,
+        "name": "white willow",
+        "image_url": null,
+        "scientific_name": "Salix alba 'Tristis'",
+        "family": "Salicaceae"
+    },
+    {
+        "id": 7034,
+        "name": "silver willow",
+        "image_url": null,
+        "scientific_name": "Salix alba var. sericea",
+        "family": "Salicaceae"
+    },
+    {
+        "id": 7035,
+        "name": "golden willow",
+        "image_url": null,
+        "scientific_name": "Salix alba var. vitellina",
+        "family": "Salicaceae"
+    },
+    {
+        "id": 7036,
+        "name": "mountain willow",
+        "image_url": null,
+        "scientific_name": "Salix arbuscula",
+        "family": "Salicaceae"
+    },
+    {
+        "id": 7037,
+        "name": "weeping willow",
+        "image_url": null,
+        "scientific_name": "Salix babylonica",
+        "family": "Salicaceae"
+    },
+    {
+        "id": 7038,
+        "name": "weeping willow",
+        "image_url": null,
+        "scientific_name": "Salix babylonica var. pekinensis 'Pendula'",
+        "family": "Salicaceae"
+    },
+    {
+        "id": 7039,
+        "name": "dragon's claw willow",
+        "image_url": null,
+        "scientific_name": "Salix babylonica var. pekinensis 'Tortuosa'",
+        "family": "Salicaceae"
+    },
+    {
+        "id": 7040,
+        "name": "Boyds dwarf willow",
+        "image_url": null,
+        "scientific_name": "Salix boydii",
+        "family": "Salicaceae"
+    },
+    {
+        "id": 7041,
+        "name": "pussy willow",
+        "image_url": null,
+        "scientific_name": "Salix caprea",
+        "family": "Salicaceae"
+    },
+    {
+        "id": 7042,
+        "name": "violet willow",
+        "image_url": null,
+        "scientific_name": "Salix daphnoides",
+        "family": "Salicaceae"
+    },
+    {
+        "id": 7043,
+        "name": "pussy willow",
+        "image_url": null,
+        "scientific_name": "Salix discolor",
+        "family": "Salicaceae"
+    },
+    {
+        "id": 7044,
+        "name": "rose-gold pussy willow",
+        "image_url": null,
+        "scientific_name": "Salix gracilistyla 'Melanostachys'",
+        "family": "Salicaceae"
+    },
+    {
+        "id": 7045,
+        "name": "dappled willow",
+        "image_url": null,
+        "scientific_name": "Salix integra 'Hakuro-nishiki'",
+        "family": "Salicaceae"
+    },
+    {
+        "id": 7046,
+        "name": "rubykins Korean willow",
+        "image_url": null,
+        "scientific_name": "Salix koriyanagi 'Rubykins'",
+        "family": "Salicaceae"
+    },
+    {
+        "id": 7047,
+        "name": "downy willow",
+        "image_url": null,
+        "scientific_name": "Salix lapponum",
+        "family": "Salicaceae"
+    },
+    {
+        "id": 7048,
+        "name": "willow",
+        "image_url": null,
+        "scientific_name": "Salix nakamurana var. yezoalpina",
+        "family": "Salicaceae"
+    },
+    {
+        "id": 7049,
+        "name": "black willow",
+        "image_url": null,
+        "scientific_name": "Salix nigra",
+        "family": "Salicaceae"
+    },
+    {
+        "id": 7050,
+        "name": "Wisconsin weeping willow",
+        "image_url": null,
+        "scientific_name": "Salix pendulina",
+        "family": "Salicaceae"
+    }
+]

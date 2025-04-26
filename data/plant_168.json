@@ -1,0 +1,212 @@
+[
+    {
+        "id": 5011,
+        "name": "lupine",
+        "image_url": null,
+        "scientific_name": "Lupinus hybrida",
+        "family": "Fabaceae"
+    },
+    {
+        "id": 5012,
+        "name": "lupine",
+        "image_url": null,
+        "scientific_name": "Lupinus 'Manhattan Lights'",
+        "family": "Fabaceae"
+    },
+    {
+        "id": 5013,
+        "name": "catchfly",
+        "image_url": null,
+        "scientific_name": "Lychnis arkwrightii 'Orange Zwerg' ORANGE DWARF",
+        "family": "Caryophyllaceae"
+    },
+    {
+        "id": 5014,
+        "name": "catchfly",
+        "image_url": null,
+        "scientific_name": "Silene Coronaria",
+        "family": "Caryophyllaceae"
+    },
+    {
+        "id": 5015,
+        "name": "rose campion",
+        "image_url": null,
+        "scientific_name": "Lychnis coronaria 'Blych' GARDENERS' WORLD",
+        "family": "Caryophyllaceae"
+    },
+    {
+        "id": 5016,
+        "name": "catchfly",
+        "image_url": null,
+        "scientific_name": "Lychnis fulgens",
+        "family": "Caryophyllaceae"
+    },
+    {
+        "id": 5017,
+        "name": "clammy campion",
+        "image_url": null,
+        "scientific_name": "Lychnis viscaria",
+        "family": "Caryophyllaceae"
+    },
+    {
+        "id": 5018,
+        "name": "catchfly",
+        "image_url": null,
+        "scientific_name": "Lychnis viscaria 'Splendens Plena'",
+        "family": "Caryophyllaceae"
+    },
+    {
+        "id": 5019,
+        "name": "matrimony vine",
+        "image_url": null,
+        "scientific_name": "Lycium barbarum",
+        "family": "Solanaceae"
+    },
+    {
+        "id": 5020,
+        "name": "Chinese desert-thorn",
+        "image_url": null,
+        "scientific_name": "Lycium chinense",
+        "family": "Solanaceae"
+    },
+    {
+        "id": 5021,
+        "name": "tomato",
+        "image_url": null,
+        "scientific_name": "Lycopersicon esculentum",
+        "family": "Solanaceae"
+    },
+    {
+        "id": 5022,
+        "name": "tomato",
+        "image_url": null,
+        "scientific_name": "Lycopersicon esculentum 'Big Beef'",
+        "family": "Solanaceae"
+    },
+    {
+        "id": 5023,
+        "name": "tomato",
+        "image_url": null,
+        "scientific_name": "Lycopersicon esculentum 'Chef's Choice Orange'",
+        "family": "Solanaceae"
+    },
+    {
+        "id": 5024,
+        "name": "tomato",
+        "image_url": null,
+        "scientific_name": "Lycopersicon esculentum 'Pink Girl'",
+        "family": "Solanaceae"
+    },
+    {
+        "id": 5025,
+        "name": "tomato",
+        "image_url": null,
+        "scientific_name": "Lycopersicon esculentum 'Rapunzel'",
+        "family": "Solanaceae"
+    },
+    {
+        "id": 5026,
+        "name": "tomato",
+        "image_url": null,
+        "scientific_name": "Lycopersicon esculentum 'Sungold'",
+        "family": "Solanaceae"
+    },
+    {
+        "id": 5027,
+        "name": "foxtail bog clubmoss",
+        "image_url": null,
+        "scientific_name": "Lycopodiella alopecuroides",
+        "family": "Lycopodiaceae"
+    },
+    {
+        "id": 5028,
+        "name": "club moss",
+        "image_url": null,
+        "scientific_name": "Lycopodium squarrosum",
+        "family": "Lycopodiaceae"
+    },
+    {
+        "id": 5029,
+        "name": "lycoris",
+        "image_url": null,
+        "scientific_name": "Lycoris caldwellii",
+        "family": "Amaryllidaceae"
+    },
+    {
+        "id": 5030,
+        "name": "lycoris",
+        "image_url": null,
+        "scientific_name": "Lycoris chinensis",
+        "family": "Amaryllidaceae"
+    },
+    {
+        "id": 5031,
+        "name": "peppermint spider lily",
+        "image_url": null,
+        "scientific_name": "Lycoris incarnata",
+        "family": "Amaryllidaceae"
+    },
+    {
+        "id": 5032,
+        "name": "spider lily",
+        "image_url": null,
+        "scientific_name": "Lycoris radiata",
+        "family": "Amaryllidaceae"
+    },
+    {
+        "id": 5033,
+        "name": "lycoris",
+        "image_url": null,
+        "scientific_name": "Lycoris sanguinea",
+        "family": "Amaryllidaceae"
+    },
+    {
+        "id": 5034,
+        "name": "lycoris",
+        "image_url": null,
+        "scientific_name": "Lycoris sprengeri",
+        "family": "Amaryllidaceae"
+    },
+    {
+        "id": 5035,
+        "name": "Resurrection lily",
+        "image_url": null,
+        "scientific_name": "Lycoris squamigera",
+        "family": "Amaryllidaceae"
+    },
+    {
+        "id": 5036,
+        "name": "fetter bush",
+        "image_url": null,
+        "scientific_name": "Lyonia lucida",
+        "family": "Ericaceae"
+    },
+    {
+        "id": 5037,
+        "name": "lyonia",
+        "image_url": null,
+        "scientific_name": "Lyonia ovalifolia var. elliptica",
+        "family": "Ericaceae"
+    },
+    {
+        "id": 5038,
+        "name": "skunk cabbage",
+        "image_url": null,
+        "scientific_name": "Lysichiton camtschatcensis",
+        "family": "Araceae"
+    },
+    {
+        "id": 5039,
+        "name": "littleleaf false tamarind",
+        "image_url": null,
+        "scientific_name": "Lysiloma watsonii",
+        "family": "Fabaceae"
+    },
+    {
+        "id": 5040,
+        "name": "loosestrife",
+        "image_url": null,
+        "scientific_name": "Lysimachia atropurpurea 'Beaujolais'",
+        "family": "Primulaceae"
+    }
+]

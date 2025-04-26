@@ -1,0 +1,212 @@
+[
+    {
+        "id": 6721,
+        "name": "azalea",
+        "image_url": null,
+        "scientific_name": "Rhododendron 'Sherwoodii'",
+        "family": "Ericaceae"
+    },
+    {
+        "id": 6722,
+        "name": "rhododendron",
+        "image_url": null,
+        "scientific_name": "Rhododendron sinogrande",
+        "family": "Ericaceae"
+    },
+    {
+        "id": 6723,
+        "name": "rhododendron",
+        "image_url": null,
+        "scientific_name": "Rhododendron smirnowii",
+        "family": "Ericaceae"
+    },
+    {
+        "id": 6724,
+        "name": "deciduous azalea",
+        "image_url": null,
+        "scientific_name": "Rhododendron 'Snow White'",
+        "family": "Ericaceae"
+    },
+    {
+        "id": 6725,
+        "name": "deciduous azalea",
+        "image_url": null,
+        "scientific_name": "Rhododendron 'Soir de Paris'",
+        "family": "Ericaceae"
+    },
+    {
+        "id": 6726,
+        "name": "rhododendron",
+        "image_url": null,
+        "scientific_name": "Rhododendron 'Solidarity'",
+        "family": "Ericaceae"
+    },
+    {
+        "id": 6727,
+        "name": "rhododendron",
+        "image_url": null,
+        "scientific_name": "Rhododendron SOUTHGATE BREEZY",
+        "family": "Ericaceae"
+    },
+    {
+        "id": 6728,
+        "name": "azalea",
+        "image_url": null,
+        "scientific_name": "Rhododendron 'St. Louis Blues'",
+        "family": "Ericaceae"
+    },
+    {
+        "id": 6729,
+        "name": "azalea",
+        "image_url": null,
+        "scientific_name": "Rhododendron 'Stewartstonian'",
+        "family": "Ericaceae"
+    },
+    {
+        "id": 6730,
+        "name": "rhododendron",
+        "image_url": null,
+        "scientific_name": "Rhododendron 'Sun Chariot'",
+        "family": "Ericaceae"
+    },
+    {
+        "id": 6731,
+        "name": "evergreen azalea",
+        "image_url": null,
+        "scientific_name": "Rhododendron 'Sun Star'",
+        "family": "Ericaceae"
+    },
+    {
+        "id": 6732,
+        "name": "azalea",
+        "image_url": null,
+        "scientific_name": "Rhododendron 'Susan Camille'",
+        "family": "Ericaceae"
+    },
+    {
+        "id": 6733,
+        "name": "evergreen azalea",
+        "image_url": null,
+        "scientific_name": "Rhododendron 'Treasure'",
+        "family": "Ericaceae"
+    },
+    {
+        "id": 6734,
+        "name": "azalea",
+        "image_url": null,
+        "scientific_name": "Rhododendron 'Tri-Lights'",
+        "family": "Ericaceae"
+    },
+    {
+        "id": 6735,
+        "name": "rhododendron",
+        "image_url": null,
+        "scientific_name": "Rhododendron 'Tyler Morris' SOUTHGATE RADIANCE",
+        "family": "Ericaceae"
+    },
+    {
+        "id": 6736,
+        "name": "deciduous azalea",
+        "image_url": null,
+        "scientific_name": "Rhododendron 'Umpqua Queen'",
+        "family": "Ericaceae"
+    },
+    {
+        "id": 6737,
+        "name": "azalea",
+        "image_url": null,
+        "scientific_name": "Rhododendron 'Viscosepala'",
+        "family": "Ericaceae"
+    },
+    {
+        "id": 6738,
+        "name": "swamp azalea",
+        "image_url": null,
+        "scientific_name": "Rhododendron viscosum",
+        "family": "Ericaceae"
+    },
+    {
+        "id": 6739,
+        "name": "azalea",
+        "image_url": null,
+        "scientific_name": "Rhododendron 'White Cascade'",
+        "family": "Ericaceae"
+    },
+    {
+        "id": 6740,
+        "name": "azalea",
+        "image_url": null,
+        "scientific_name": "Rhododendron 'White Lights'",
+        "family": "Ericaceae"
+    },
+    {
+        "id": 6741,
+        "name": "rhodendron",
+        "image_url": null,
+        "scientific_name": "Rhododendron 'Yaku Duchess'",
+        "family": "Ericaceae"
+    },
+    {
+        "id": 6742,
+        "name": "azalea",
+        "image_url": null,
+        "scientific_name": "Rhododendron 'Yaku Prince'",
+        "family": "Ericaceae"
+    },
+    {
+        "id": 6743,
+        "name": "Korean azalea",
+        "image_url": null,
+        "scientific_name": "Rhododendron yedoense var. poukhanense",
+        "family": "Ericaceae"
+    },
+    {
+        "id": 6744,
+        "name": "rosy posy",
+        "image_url": null,
+        "scientific_name": "Rhodohypoxis baurii 'Helen'",
+        "family": "Hypoxidaceae"
+    },
+    {
+        "id": 6745,
+        "name": "jet bead",
+        "image_url": null,
+        "scientific_name": "Rhodotypos scandens",
+        "family": "Rosaceae"
+    },
+    {
+        "id": 6746,
+        "name": "fragrant sumac",
+        "image_url": null,
+        "scientific_name": "Rhus aromatica",
+        "family": "Anacardiaceae"
+    },
+    {
+        "id": 6747,
+        "name": "fragrant sumac",
+        "image_url": null,
+        "scientific_name": "Rhus aromatica 'Gro-Low'",
+        "family": "Anacardiaceae"
+    },
+    {
+        "id": 6748,
+        "name": "Chinese sumac",
+        "image_url": null,
+        "scientific_name": "Rhus chinensis",
+        "family": "Anacardiaceae"
+    },
+    {
+        "id": 6749,
+        "name": "winged sumac",
+        "image_url": null,
+        "scientific_name": "Rhus copallinum",
+        "family": "Anacardiaceae"
+    },
+    {
+        "id": 6750,
+        "name": "dwarf sumac",
+        "image_url": null,
+        "scientific_name": "Rhus copallinum var. latifolia",
+        "family": "Anacardiaceae"
+    }
+]

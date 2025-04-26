@@ -1,0 +1,212 @@
+[
+    {
+        "id": 3001,
+        "name": "fortunearia",
+        "image_url": null,
+        "scientific_name": "Fortunearia sinensis",
+        "family": "Hamamelidaceae"
+    },
+    {
+        "id": 3002,
+        "name": "dwarf fothergilla",
+        "image_url": null,
+        "scientific_name": "Fothergilla gardenii",
+        "family": "Hamamelidaceae"
+    },
+    {
+        "id": 3003,
+        "name": "dwarf fothergilla",
+        "image_url": null,
+        "scientific_name": "Fothergilla gardenii 'Blue Mist'",
+        "family": "Hamamelidaceae"
+    },
+    {
+        "id": 3004,
+        "name": "dwarf fothergilla",
+        "image_url": null,
+        "scientific_name": "Fothergilla gardenii 'Jane Platt'",
+        "family": "Hamamelidaceae"
+    },
+    {
+        "id": 3005,
+        "name": "dwarf fothergilla",
+        "image_url": null,
+        "scientific_name": "Fothergilla gardenii 'Klmtwo' BEAVER CREEK",
+        "family": "Hamamelidaceae"
+    },
+    {
+        "id": 3006,
+        "name": "dwarf fothergilla",
+        "image_url": null,
+        "scientific_name": "Fothergilla gardenii 'Suzanne'",
+        "family": "Hamamelidaceae"
+    },
+    {
+        "id": 3007,
+        "name": "dwarf fothergilla",
+        "image_url": null,
+        "scientific_name": "Fothergilla gardenii 'Windy City'",
+        "family": "Hamamelidaceae"
+    },
+    {
+        "id": 3008,
+        "name": "fothergilla",
+        "image_url": null,
+        "scientific_name": "Fothergilla intermedia 'Blue Shadow'",
+        "family": "Hamamelidaceae"
+    },
+    {
+        "id": 3009,
+        "name": "fothergilla",
+        "image_url": null,
+        "scientific_name": "Fothergilla intermedia 'Klmsixteen' MAY BOUQUET",
+        "family": "Hamamelidaceae"
+    },
+    {
+        "id": 3010,
+        "name": "witch-alder",
+        "image_url": null,
+        "scientific_name": "Fothergilla major",
+        "family": "Hamamelidaceae"
+    },
+    {
+        "id": 3011,
+        "name": "large fothergilla",
+        "image_url": null,
+        "scientific_name": "Fothergilla major 'Arkansas Beauty'",
+        "family": "Hamamelidaceae"
+    },
+    {
+        "id": 3012,
+        "name": "dwarf fothergilla",
+        "image_url": null,
+        "scientific_name": "Fothergilla 'Mount Airy'",
+        "family": "Hamamelidaceae"
+    },
+    {
+        "id": 3013,
+        "name": "strawberry",
+        "image_url": null,
+        "scientific_name": "Fragaria 'Allstar'",
+        "family": "Rosaceae"
+    },
+    {
+        "id": 3014,
+        "name": "junebearing strawberry",
+        "image_url": null,
+        "scientific_name": "Fragaria ananassa BERRIES GALORE",
+        "family": "Rosaceae"
+    },
+    {
+        "id": 3015,
+        "name": "junebearing strawberry",
+        "image_url": null,
+        "scientific_name": "Fragaria ananassa 'Honeoye'",
+        "family": "Rosaceae"
+    },
+    {
+        "id": 3016,
+        "name": "everbearing strawberry",
+        "image_url": null,
+        "scientific_name": "Fragaria ananassa 'Ruby Ann'",
+        "family": "Rosaceae"
+    },
+    {
+        "id": 3017,
+        "name": "strawberry",
+        "image_url": null,
+        "scientific_name": "Fragaria 'Cavendish'",
+        "family": "Rosaceae"
+    },
+    {
+        "id": 3018,
+        "name": "strawberry",
+        "image_url": null,
+        "scientific_name": "Fragaria 'Dunlap'",
+        "family": "Rosaceae"
+    },
+    {
+        "id": 3019,
+        "name": "strawberry",
+        "image_url": null,
+        "scientific_name": "Fragaria 'Earliglo'",
+        "family": "Rosaceae"
+    },
+    {
+        "id": 3020,
+        "name": "everbearing strawberry",
+        "image_url": null,
+        "scientific_name": "Fragaria EVERSWEET",
+        "family": "Rosaceae"
+    },
+    {
+        "id": 3021,
+        "name": "strawberry",
+        "image_url": null,
+        "scientific_name": "Fragaria 'Frel' PINK PANDA",
+        "family": "Rosaceae"
+    },
+    {
+        "id": 3022,
+        "name": "strawberry",
+        "image_url": null,
+        "scientific_name": "Fragaria 'Lipstick'",
+        "family": "Rosaceae"
+    },
+    {
+        "id": 3023,
+        "name": "wild strawberry",
+        "image_url": null,
+        "scientific_name": "Fragaria 'Mara des Bois'",
+        "family": "Rosaceae"
+    },
+    {
+        "id": 3024,
+        "name": "everbearing strawberry",
+        "image_url": null,
+        "scientific_name": "Fragaria 'Ozark Beauty'",
+        "family": "Rosaceae"
+    },
+    {
+        "id": 3025,
+        "name": "junebearing strawberry",
+        "image_url": null,
+        "scientific_name": "Fragaria 'Surecrop'",
+        "family": "Rosaceae"
+    },
+    {
+        "id": 3026,
+        "name": "everbearing strawberry",
+        "image_url": null,
+        "scientific_name": "Fragaria 'Tribute'",
+        "family": "Rosaceae"
+    },
+    {
+        "id": 3027,
+        "name": "wild strawberry",
+        "image_url": null,
+        "scientific_name": "Fragaria vesca",
+        "family": "Rosaceae"
+    },
+    {
+        "id": 3028,
+        "name": "woodland strawberry",
+        "image_url": null,
+        "scientific_name": "Fragaria vesca 'Alexandra'",
+        "family": "Rosaceae"
+    },
+    {
+        "id": 3029,
+        "name": "scarlet strawberry",
+        "image_url": null,
+        "scientific_name": "Fragaria virginiana",
+        "family": "Rosaceae"
+    },
+    {
+        "id": 3030,
+        "name": "pineberry",
+        "image_url": null,
+        "scientific_name": "Fragaria WONDERFUL PINEBERRY",
+        "family": "Rosaceae"
+    }
+]

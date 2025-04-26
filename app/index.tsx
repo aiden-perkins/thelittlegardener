@@ -50,7 +50,7 @@ export default function Index() {
     setApiResponse(null);
     setError(null);
 
-    const apiUrl = '/gemini'; // Relative path to your API route
+    const apiUrl = '/api/gemini'; // Relative path to your API route
 
     try {
       console.log("Fetching image URI:", image.uri);

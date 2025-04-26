@@ -1,0 +1,212 @@
+[
+    {
+        "id": 9093,
+        "name": "Tallwormwood",
+        "image_url": null,
+        "scientific_name": "Artemisia campestris",
+        "family": "Asteraceae"
+    },
+    {
+        "id": 9094,
+        "name": "Beach Wormwood",
+        "image_url": null,
+        "scientific_name": "Artemisia campestris subsp. caudata",
+        "family": "Asteraceae"
+    },
+    {
+        "id": 9095,
+        "name": "Pacific Wormwood",
+        "image_url": null,
+        "scientific_name": "Artemisia campestris subsp. pacifica",
+        "family": "Asteraceae"
+    },
+    {
+        "id": 9096,
+        "name": "Silver Sagebrush",
+        "image_url": null,
+        "scientific_name": "Artemisia cana",
+        "family": "Asteraceae"
+    },
+    {
+        "id": 9097,
+        "name": "Douglas' Wormwood",
+        "image_url": null,
+        "scientific_name": "Artemisia douglasiana",
+        "family": "Asteraceae"
+    },
+    {
+        "id": 9098,
+        "name": "Purple Wormwood",
+        "image_url": null,
+        "scientific_name": "Artemisia globularia subsp. globularia",
+        "family": "Asteraceae"
+    },
+    {
+        "id": 9099,
+        "name": "Forked Wormwood",
+        "image_url": null,
+        "scientific_name": "Artemisia hyperborea",
+        "family": "Asteraceae"
+    },
+    {
+        "id": 9100,
+        "name": "Siberian Wormwood",
+        "image_url": null,
+        "scientific_name": "Artemisia laciniata",
+        "family": "Asteraceae"
+    },
+    {
+        "id": 9101,
+        "name": "Siberian Wormwood",
+        "image_url": null,
+        "scientific_name": "Artemisia laciniata subsp. laciniata",
+        "family": "Asteraceae"
+    },
+    {
+        "id": 9102,
+        "name": "Long Leaved Mugwort",
+        "image_url": null,
+        "scientific_name": "Artemisia longifolia",
+        "family": "Asteraceae"
+    },
+    {
+        "id": 9103,
+        "name": "Prairie Sage",
+        "image_url": null,
+        "scientific_name": "Artemisia ludoviciana subsp. ludoviciana",
+        "family": "Asteraceae"
+    },
+    {
+        "id": 9104,
+        "name": "Western Mugwort",
+        "image_url": null,
+        "scientific_name": "Artemisia ludoviciana subsp. incompta",
+        "family": "Asteraceae"
+    },
+    {
+        "id": 9105,
+        "name": "Michaux's Mugwort",
+        "image_url": null,
+        "scientific_name": "Artemisia michauxiana",
+        "family": "Asteraceae"
+    },
+    {
+        "id": 9106,
+        "name": "Alpine Wormwood",
+        "image_url": null,
+        "scientific_name": "Artemisia norvegica",
+        "family": "Asteraceae"
+    },
+    {
+        "id": 9107,
+        "name": "Mountain Sagewort",
+        "image_url": null,
+        "scientific_name": "Artemisia norvegica subsp. saxatilis",
+        "family": "Asteraceae"
+    },
+    {
+        "id": 9108,
+        "name": "Oldwoman",
+        "image_url": null,
+        "scientific_name": "Artemisia stelleriana",
+        "family": "Asteraceae"
+    },
+    {
+        "id": 9109,
+        "name": "Tilesius Wormwood",
+        "image_url": null,
+        "scientific_name": "Artemisia tilesii",
+        "family": "Asteraceae"
+    },
+    {
+        "id": 9110,
+        "name": "Big Sagebrush",
+        "image_url": null,
+        "scientific_name": "Artemisia tridentata",
+        "family": "Asteraceae"
+    },
+    {
+        "id": 9111,
+        "name": "Three-Tip Sagebrush",
+        "image_url": null,
+        "scientific_name": "Artemisia tripartita subsp. tripartita",
+        "family": "Asteraceae"
+    },
+    {
+        "id": 9112,
+        "name": "Rock Wormwood",
+        "image_url": null,
+        "scientific_name": "Artemisia woodii",
+        "family": "Asteraceae"
+    },
+    {
+        "id": 9113,
+        "name": "Goat's Beard",
+        "image_url": null,
+        "scientific_name": "Aruncus dioicus var. acuminatus",
+        "family": "Rosaceae"
+    },
+    {
+        "id": 9114,
+        "name": "Poke Milkweed",
+        "image_url": null,
+        "scientific_name": "Asclepias exaltata",
+        "family": "Apocynaceae"
+    },
+    {
+        "id": 9115,
+        "name": "Swamp Milkweed",
+        "image_url": null,
+        "scientific_name": "Asclepias incarnata subsp. incarnata",
+        "family": "Apocynaceae"
+    },
+    {
+        "id": 9116,
+        "name": "Side Cluster Milkweed",
+        "image_url": null,
+        "scientific_name": "Asclepias lanuginosa",
+        "family": "Apocynaceae"
+    },
+    {
+        "id": 9117,
+        "name": "Oval Leaf Milkweed",
+        "image_url": null,
+        "scientific_name": "Asclepias ovalifolia",
+        "family": "Apocynaceae"
+    },
+    {
+        "id": 9118,
+        "name": "Hybrid Milkweed",
+        "image_url": null,
+        "scientific_name": "Asclepias speciosa x",
+        "family": "Apocynaceae"
+    },
+    {
+        "id": 9119,
+        "name": "Butterfly Milkweed",
+        "image_url": null,
+        "scientific_name": "Asclepias tuberosa var. interior",
+        "family": "Apocynaceae"
+    },
+    {
+        "id": 9120,
+        "name": "White Milkweed",
+        "image_url": null,
+        "scientific_name": "Asclepias variegata",
+        "family": "Apocynaceae"
+    },
+    {
+        "id": 9121,
+        "name": "Green Comet Milkweed",
+        "image_url": null,
+        "scientific_name": "Asclepias viridiflora",
+        "family": "Apocynaceae"
+    },
+    {
+        "id": 9122,
+        "name": "Elegant Hawksbeard",
+        "image_url": null,
+        "scientific_name": "Askellia elegans",
+        "family": "Asteraceae"
+    }
+]

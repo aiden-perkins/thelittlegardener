@@ -1,0 +1,212 @@
+[
+    {
+        "id": 8913,
+        "name": "California Amaranth",
+        "image_url": null,
+        "scientific_name": "Amaranthus californicus",
+        "family": "Amaranthaceae"
+    },
+    {
+        "id": 8914,
+        "name": "Smooth Amaranth",
+        "image_url": null,
+        "scientific_name": "Amaranthus hybridus",
+        "family": "Amaranthaceae"
+    },
+    {
+        "id": 8915,
+        "name": "Mucronate Amaranth",
+        "image_url": null,
+        "scientific_name": "Amaranthus hybridus subsp. quitensis",
+        "family": "Amaranthaceae"
+    },
+    {
+        "id": 8916,
+        "name": "Amaranth",
+        "image_url": null,
+        "scientific_name": "Amaranthus hybridus x var. rudis",
+        "family": "Amaranthaceae"
+    },
+    {
+        "id": 8917,
+        "name": "Amaranth",
+        "image_url": null,
+        "scientific_name": "Amaranthus hybridus x var. tuberculatus",
+        "family": "Amaranthaceae"
+    },
+    {
+        "id": 8918,
+        "name": "Powell's Amaranth",
+        "image_url": null,
+        "scientific_name": "Amaranthus powellii subsp. powellii",
+        "family": "Amaranthaceae"
+    },
+    {
+        "id": 8919,
+        "name": "Red Root Amaranth",
+        "image_url": null,
+        "scientific_name": "Amaranthus retroflexus",
+        "family": "Amaranthaceae"
+    },
+    {
+        "id": 8920,
+        "name": "Rough Fruit Amaranth",
+        "image_url": null,
+        "scientific_name": "Amaranthus tuberculatus",
+        "family": "Amaranthaceae"
+    },
+    {
+        "id": 8921,
+        "name": "Amarante Tubercul\u00e9e",
+        "image_url": null,
+        "scientific_name": "Amaranthus tuberculatus var. tuberculatus",
+        "family": "Amaranthaceae"
+    },
+    {
+        "id": 8922,
+        "name": "Tropical Green Amaranth",
+        "image_url": null,
+        "scientific_name": "Amaranthus viridis",
+        "family": "Amaranthaceae"
+    },
+    {
+        "id": 8923,
+        "name": "Amaranth",
+        "image_url": null,
+        "scientific_name": "Amaranthus xozanonii",
+        "family": "Amaranthaceae"
+    },
+    {
+        "id": 8924,
+        "name": "Annual Ragweed",
+        "image_url": null,
+        "scientific_name": "Ambrosia artemisiifolia",
+        "family": "Asteraceae"
+    },
+    {
+        "id": 8925,
+        "name": "Silver Burweed",
+        "image_url": null,
+        "scientific_name": "Ambrosia chamissonis",
+        "family": "Asteraceae"
+    },
+    {
+        "id": 8926,
+        "name": "Naked Spike Ambrosia",
+        "image_url": null,
+        "scientific_name": "Ambrosia psilostachya de",
+        "family": "Asteraceae"
+    },
+    {
+        "id": 8927,
+        "name": "Great Ragweed",
+        "image_url": null,
+        "scientific_name": "Ambrosia trifida",
+        "family": "Asteraceae"
+    },
+    {
+        "id": 8928,
+        "name": "Sainte-H\u00e9l\u00e8ne Island Ragweed",
+        "image_url": null,
+        "scientific_name": "Ambrosia helenae",
+        "family": "Asteraceae"
+    },
+    {
+        "id": 8929,
+        "name": "Pacific Serviceberry",
+        "image_url": null,
+        "scientific_name": "Amelanchier alnifolia var. semiintegrifolia",
+        "family": "Rosaceae"
+    },
+    {
+        "id": 8930,
+        "name": "Beautiful Serviceberry",
+        "image_url": null,
+        "scientific_name": "Amelanchier amabilis",
+        "family": "Rosaceae"
+    },
+    {
+        "id": 8931,
+        "name": "Hybrid Serviceberry",
+        "image_url": null,
+        "scientific_name": "Amelanchier bartramiana x",
+        "family": "Rosaceae"
+    },
+    {
+        "id": 8932,
+        "name": "Cusick's Serviceberry",
+        "image_url": null,
+        "scientific_name": "Amelanchier cusickii",
+        "family": "Rosaceae"
+    },
+    {
+        "id": 8933,
+        "name": "Fernald Serviceberry",
+        "image_url": null,
+        "scientific_name": "Amelanchier fernaldii",
+        "family": "Rosaceae"
+    },
+    {
+        "id": 8934,
+        "name": "Gasp\u00e9 Serviceberry",
+        "image_url": null,
+        "scientific_name": "Amelanchier gaspensis",
+        "family": "Rosaceae"
+    },
+    {
+        "id": 8935,
+        "name": "Running Serviceberry",
+        "image_url": null,
+        "scientific_name": "Amelanchier humilis",
+        "family": "Rosaceae"
+    },
+    {
+        "id": 8936,
+        "name": "Shadbush",
+        "image_url": null,
+        "scientific_name": "Amelanchier interior",
+        "family": "Rosaceae"
+    },
+    {
+        "id": 8937,
+        "name": "Roundleaf Serviceberry",
+        "image_url": null,
+        "scientific_name": "Amelanchier sanguinea",
+        "family": "Rosaceae"
+    },
+    {
+        "id": 8938,
+        "name": "Running Chuckleypear",
+        "image_url": null,
+        "scientific_name": "Amelanchier spicata",
+        "family": "Rosaceae"
+    },
+    {
+        "id": 8939,
+        "name": "Overlooked Serviceberry",
+        "image_url": null,
+        "scientific_name": "Amelanchier xneglecta",
+        "family": "Rosaceae"
+    },
+    {
+        "id": 8940,
+        "name": "Scarlet Ammannia",
+        "image_url": null,
+        "scientific_name": "Ammannia coccinea",
+        "family": "Lythraceae"
+    },
+    {
+        "id": 8941,
+        "name": "Scarlett Ammannia",
+        "image_url": null,
+        "scientific_name": "Ammannia robusta",
+        "family": "Lythraceae"
+    },
+    {
+        "id": 8942,
+        "name": "European Beachgrass",
+        "image_url": null,
+        "scientific_name": "Ammophila arenaria",
+        "family": "Poaceae"
+    }
+]

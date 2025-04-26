@@ -1,0 +1,212 @@
+[
+    {
+        "id": 9603,
+        "name": "Bristly Sedge",
+        "image_url": null,
+        "scientific_name": "Carex comosa",
+        "family": "Cyperaceae"
+    },
+    {
+        "id": 9604,
+        "name": "Beautiful Sedge",
+        "image_url": null,
+        "scientific_name": "Carex concinna",
+        "family": "Cyperaceae"
+    },
+    {
+        "id": 9605,
+        "name": "Northwestern Sedge",
+        "image_url": null,
+        "scientific_name": "Carex concinnoides",
+        "family": "Cyperaceae"
+    },
+    {
+        "id": 9606,
+        "name": "Field Sedge",
+        "image_url": null,
+        "scientific_name": "Carex conoidea",
+        "family": "Cyperaceae"
+    },
+    {
+        "id": 9607,
+        "name": "Cordilleran Sedge",
+        "image_url": null,
+        "scientific_name": "Carex cordillerana",
+        "family": "Cyperaceae"
+    },
+    {
+        "id": 9608,
+        "name": "Crawe's Sedge",
+        "image_url": null,
+        "scientific_name": "Carex crawei",
+        "family": "Cyperaceae"
+    },
+    {
+        "id": 9609,
+        "name": "Crawford's Sedge",
+        "image_url": null,
+        "scientific_name": "Carex crawfordii",
+        "family": "Cyperaceae"
+    },
+    {
+        "id": 9610,
+        "name": "Fringed Sedge",
+        "image_url": null,
+        "scientific_name": "Carex crinita var. crinita",
+        "family": "Cyperaceae"
+    },
+    {
+        "id": 9611,
+        "name": "Sedge",
+        "image_url": null,
+        "scientific_name": "Carex crinita var. crinita x",
+        "family": "Cyperaceae"
+    },
+    {
+        "id": 9612,
+        "name": "Northeastern Sedge",
+        "image_url": null,
+        "scientific_name": "Carex cryptolepis",
+        "family": "Cyperaceae"
+    },
+    {
+        "id": 9613,
+        "name": "Clustered Sedge",
+        "image_url": null,
+        "scientific_name": "Carex cumulata",
+        "family": "Cyperaceae"
+    },
+    {
+        "id": 9614,
+        "name": "Sedge",
+        "image_url": null,
+        "scientific_name": "Carex cumulata x",
+        "family": "Cyperaceae"
+    },
+    {
+        "id": 9615,
+        "name": "Cusick's Sedge",
+        "image_url": null,
+        "scientific_name": "Carex cusickii",
+        "family": "Cyperaceae"
+    },
+    {
+        "id": 9616,
+        "name": "White Edge Sedge",
+        "image_url": null,
+        "scientific_name": "Carex debilis",
+        "family": "Cyperaceae"
+    },
+    {
+        "id": 9617,
+        "name": "White Edge Sedge",
+        "image_url": null,
+        "scientific_name": "Carex debilis var. rudgei",
+        "family": "Cyperaceae"
+    },
+    {
+        "id": 9618,
+        "name": "Short Stemmed Sedge",
+        "image_url": null,
+        "scientific_name": "Carex deflexa",
+        "family": "Cyperaceae"
+    },
+    {
+        "id": 9619,
+        "name": "Bent Northern Sedge",
+        "image_url": null,
+        "scientific_name": "Carex deflexa var. deflexa",
+        "family": "Cyperaceae"
+    },
+    {
+        "id": 9620,
+        "name": "Boott's Sedge",
+        "image_url": null,
+        "scientific_name": "Carex deflexa var. boottii",
+        "family": "Cyperaceae"
+    },
+    {
+        "id": 9621,
+        "name": "Short Scale Sedge",
+        "image_url": null,
+        "scientific_name": "Carex deweyana",
+        "family": "Cyperaceae"
+    },
+    {
+        "id": 9622,
+        "name": "Dewey's Sedge",
+        "image_url": null,
+        "scientific_name": "Carex deweyana var. deweyana",
+        "family": "Cyperaceae"
+    },
+    {
+        "id": 9623,
+        "name": "Roundfruit Sedge",
+        "image_url": null,
+        "scientific_name": "Carex deweyana var. collectanea",
+        "family": "Cyperaceae"
+    },
+    {
+        "id": 9624,
+        "name": "Lesser Panicled Sedge",
+        "image_url": null,
+        "scientific_name": "Carex diandra",
+        "family": "Cyperaceae"
+    },
+    {
+        "id": 9625,
+        "name": "Slender Woodland Sedge",
+        "image_url": null,
+        "scientific_name": "Carex digitalis",
+        "family": "Cyperaceae"
+    },
+    {
+        "id": 9626,
+        "name": "Slender Woodland Sedge",
+        "image_url": null,
+        "scientific_name": "Carex digitalis var. digitalis",
+        "family": "Cyperaceae"
+    },
+    {
+        "id": 9627,
+        "name": "Softleaf Sedge",
+        "image_url": null,
+        "scientific_name": "Carex disperma",
+        "family": "Cyperaceae"
+    },
+    {
+        "id": 9628,
+        "name": "Distant Sedge",
+        "image_url": null,
+        "scientific_name": "Carex distans",
+        "family": "Cyperaceae"
+    },
+    {
+        "id": 9629,
+        "name": "Tworank Sedge",
+        "image_url": null,
+        "scientific_name": "Carex disticha",
+        "family": "Cyperaceae"
+    },
+    {
+        "id": 9630,
+        "name": "Grassland Sedge",
+        "image_url": null,
+        "scientific_name": "Carex divulsa",
+        "family": "Cyperaceae"
+    },
+    {
+        "id": 9631,
+        "name": "Douglas' Sedge",
+        "image_url": null,
+        "scientific_name": "Carex douglasii",
+        "family": "Cyperaceae"
+    },
+    {
+        "id": 9632,
+        "name": "Narrow Leaved Sedge",
+        "image_url": null,
+        "scientific_name": "Carex duriuscula",
+        "family": "Cyperaceae"
+    }
+]

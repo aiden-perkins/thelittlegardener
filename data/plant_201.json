@@ -1,0 +1,212 @@
+[
+    {
+        "id": 6001,
+        "name": "Norway spruce",
+        "image_url": null,
+        "scientific_name": "Picea abies 'Little Gem'",
+        "family": "Pinaceae"
+    },
+    {
+        "id": 6002,
+        "name": "Norway spruce",
+        "image_url": null,
+        "scientific_name": "Picea abies 'Little Joe'",
+        "family": "Pinaceae"
+    },
+    {
+        "id": 6003,
+        "name": "Norway spruce",
+        "image_url": null,
+        "scientific_name": "Picea abies 'Maxwellii'",
+        "family": "Pinaceae"
+    },
+    {
+        "id": 6004,
+        "name": "Norway spruce",
+        "image_url": null,
+        "scientific_name": "Picea abies 'Nidiformis'",
+        "family": "Pinaceae"
+    },
+    {
+        "id": 6005,
+        "name": "Norway spruce",
+        "image_url": null,
+        "scientific_name": "Picea abies 'Noel' ROYAL SPLENDOR",
+        "family": "Pinaceae"
+    },
+    {
+        "id": 6006,
+        "name": "Norway spruce",
+        "image_url": null,
+        "scientific_name": "Picea abies 'Parsoni'",
+        "family": "Pinaceae"
+    },
+    {
+        "id": 6007,
+        "name": "Norway spruce",
+        "image_url": null,
+        "scientific_name": "Picea abies 'Pendula'",
+        "family": "Pinaceae"
+    },
+    {
+        "id": 6008,
+        "name": "Norway spruce",
+        "image_url": null,
+        "scientific_name": "Picea abies 'Pumila'",
+        "family": "Pinaceae"
+    },
+    {
+        "id": 6009,
+        "name": "Norway spruce",
+        "image_url": null,
+        "scientific_name": "Picea abies 'Sherwood Compact'",
+        "family": "Pinaceae"
+    },
+    {
+        "id": 6010,
+        "name": "snake fir",
+        "image_url": null,
+        "scientific_name": "Picea abies 'Virgata'",
+        "family": "Pinaceae"
+    },
+    {
+        "id": 6011,
+        "name": "Norway spruce",
+        "image_url": null,
+        "scientific_name": "Picea abies 'Weeping Blue'",
+        "family": "Pinaceae"
+    },
+    {
+        "id": 6012,
+        "name": "Norway spruce",
+        "image_url": null,
+        "scientific_name": "Picea abies 'Witch's Brood'",
+        "family": "Pinaceae"
+    },
+    {
+        "id": 6013,
+        "name": "Alcock's spruce",
+        "image_url": null,
+        "scientific_name": "Picea alcoquiana 'Howell's Tigertail'",
+        "family": "Pinaceae"
+    },
+    {
+        "id": 6014,
+        "name": "Alcock's spruce",
+        "image_url": null,
+        "scientific_name": "Picea bicolor 'Howell's Dwarf'",
+        "family": "Pinaceae"
+    },
+    {
+        "id": 6015,
+        "name": "brewer's spruce",
+        "image_url": null,
+        "scientific_name": "Picea breweriana",
+        "family": "Pinaceae"
+    },
+    {
+        "id": 6016,
+        "name": "Engelmann spruce",
+        "image_url": null,
+        "scientific_name": "Picea engelmannii",
+        "family": "Pinaceae"
+    },
+    {
+        "id": 6017,
+        "name": "white spruce",
+        "image_url": null,
+        "scientific_name": "Picea glauca",
+        "family": "Pinaceae"
+    },
+    {
+        "id": 6018,
+        "name": "white spruce",
+        "image_url": null,
+        "scientific_name": "Picea glauca 'Cecilia'",
+        "family": "Pinaceae"
+    },
+    {
+        "id": 6019,
+        "name": "white spruce",
+        "image_url": null,
+        "scientific_name": "Picea glauca 'Conica'",
+        "family": "Pinaceae"
+    },
+    {
+        "id": 6020,
+        "name": "white spruce",
+        "image_url": null,
+        "scientific_name": "Picea glauca 'Densata'",
+        "family": "Pinaceae"
+    },
+    {
+        "id": 6021,
+        "name": "white spruce",
+        "image_url": null,
+        "scientific_name": "Picea glauca 'Echiniformis'",
+        "family": "Pinaceae"
+    },
+    {
+        "id": 6022,
+        "name": "white spruce",
+        "image_url": null,
+        "scientific_name": "Picea glauca JEAN'S DILLY",
+        "family": "Pinaceae"
+    },
+    {
+        "id": 6023,
+        "name": "white spruce",
+        "image_url": null,
+        "scientific_name": "Picea glauca 'Little Globe'",
+        "family": "Pinaceae"
+    },
+    {
+        "id": 6024,
+        "name": "white spruce",
+        "image_url": null,
+        "scientific_name": "Picea glauca 'Pendula'",
+        "family": "Pinaceae"
+    },
+    {
+        "id": 6025,
+        "name": "white spruce",
+        "image_url": null,
+        "scientific_name": "Picea glauca 'Sander's Blue'",
+        "family": "Pinaceae"
+    },
+    {
+        "id": 6026,
+        "name": "Sakhalin spruce",
+        "image_url": null,
+        "scientific_name": "Picea glehnii",
+        "family": "Pinaceae"
+    },
+    {
+        "id": 6027,
+        "name": "Sakhalin spruce",
+        "image_url": null,
+        "scientific_name": "Picea glehnii 'Yatsubusa'",
+        "family": "Pinaceae"
+    },
+    {
+        "id": 6028,
+        "name": "yezo spruce",
+        "image_url": null,
+        "scientific_name": "Picea jezoensis",
+        "family": "Pinaceae"
+    },
+    {
+        "id": 6029,
+        "name": "luiang spruce",
+        "image_url": null,
+        "scientific_name": "Picea likiangensis",
+        "family": "Pinaceae"
+    },
+    {
+        "id": 6030,
+        "name": "black spruce",
+        "image_url": null,
+        "scientific_name": "Picea mariana 'Nana'",
+        "family": "Pinaceae"
+    }
+]

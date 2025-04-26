@@ -1,0 +1,212 @@
+[
+    {
+        "id": 4501,
+        "name": "common juniper",
+        "image_url": null,
+        "scientific_name": "Juniperus communis 'Effusa'",
+        "family": "Cupressaceae"
+    },
+    {
+        "id": 4502,
+        "name": "common juniper",
+        "image_url": null,
+        "scientific_name": "Juniperus communis 'Gold Cone'",
+        "family": "Cupressaceae"
+    },
+    {
+        "id": 4503,
+        "name": "common juniper",
+        "image_url": null,
+        "scientific_name": "Juniperus communis var. depressa",
+        "family": "Cupressaceae"
+    },
+    {
+        "id": 4504,
+        "name": "common juniper",
+        "image_url": null,
+        "scientific_name": "Juniperus communis var. depressa 'AmiDak' BLUEBERRY DELIGHT",
+        "family": "Cupressaceae"
+    },
+    {
+        "id": 4505,
+        "name": "common juniper",
+        "image_url": null,
+        "scientific_name": "Juniperus communis var. depressa 'ReeDak' COPPER DELIGHT",
+        "family": "Cupressaceae"
+    },
+    {
+        "id": 4506,
+        "name": "shore juniper",
+        "image_url": null,
+        "scientific_name": "Juniperus conferta",
+        "family": "Cupressaceae"
+    },
+    {
+        "id": 4507,
+        "name": "shore juniper",
+        "image_url": null,
+        "scientific_name": "Juniperus conferta 'Blue Pacific'",
+        "family": "Cupressaceae"
+    },
+    {
+        "id": 4508,
+        "name": "creeping juniper",
+        "image_url": null,
+        "scientific_name": "Juniperus horizontalis 'Bar Harbor'",
+        "family": "Cupressaceae"
+    },
+    {
+        "id": 4509,
+        "name": "creeping juniper",
+        "image_url": null,
+        "scientific_name": "Juniperus horizontalis 'Blue Chip'",
+        "family": "Cupressaceae"
+    },
+    {
+        "id": 4510,
+        "name": "creeping juniper",
+        "image_url": null,
+        "scientific_name": "Juniperus horizontalis 'Blue Forest'",
+        "family": "Cupressaceae"
+    },
+    {
+        "id": 4511,
+        "name": "creeping juniper",
+        "image_url": null,
+        "scientific_name": "Juniperus horizontalis 'Emerald Spreader'",
+        "family": "Cupressaceae"
+    },
+    {
+        "id": 4512,
+        "name": "creeping juniper",
+        "image_url": null,
+        "scientific_name": "Juniperus horizontalis 'Glomerata'",
+        "family": "Cupressaceae"
+    },
+    {
+        "id": 4513,
+        "name": "creeping juniper",
+        "image_url": null,
+        "scientific_name": "Juniperus horizontalis 'Grey Forest'",
+        "family": "Cupressaceae"
+    },
+    {
+        "id": 4514,
+        "name": "creeping juniper",
+        "image_url": null,
+        "scientific_name": "Juniperus horizontalis 'Limeglow'",
+        "family": "Cupressaceae"
+    },
+    {
+        "id": 4515,
+        "name": "creeping juniper",
+        "image_url": null,
+        "scientific_name": "Juniperus horizontalis 'Monber' ICEE BLUE",
+        "family": "Cupressaceae"
+    },
+    {
+        "id": 4516,
+        "name": "creeping juniper",
+        "image_url": null,
+        "scientific_name": "Juniperus horizontalis 'Mother Lode'",
+        "family": "Cupressaceae"
+    },
+    {
+        "id": 4517,
+        "name": "creeping juniper",
+        "image_url": null,
+        "scientific_name": "Juniperus horizontalis 'Pancake'",
+        "family": "Cupressaceae"
+    },
+    {
+        "id": 4518,
+        "name": "creeping juniper",
+        "image_url": null,
+        "scientific_name": "Juniperus horizontalis 'Plumosa'",
+        "family": "Cupressaceae"
+    },
+    {
+        "id": 4519,
+        "name": "creeping juniper",
+        "image_url": null,
+        "scientific_name": "Juniperus horizontalis 'Prince of Wales'",
+        "family": "Cupressaceae"
+    },
+    {
+        "id": 4520,
+        "name": "creeping juniper",
+        "image_url": null,
+        "scientific_name": "Juniperus horizontalis 'Wiltonii'",
+        "family": "Cupressaceae"
+    },
+    {
+        "id": 4521,
+        "name": "creeping juniper",
+        "image_url": null,
+        "scientific_name": "Juniperus horizontalis 'Youngstown'",
+        "family": "Cupressaceae"
+    },
+    {
+        "id": 4522,
+        "name": "juniper",
+        "image_url": null,
+        "scientific_name": "Juniperus pfitzeriana 'Armstrongii'",
+        "family": "Cupressaceae"
+    },
+    {
+        "id": 4523,
+        "name": "juniper",
+        "image_url": null,
+        "scientific_name": "Juniperus pfitzeriana 'Daub's Frosted'",
+        "family": "Cupressaceae"
+    },
+    {
+        "id": 4524,
+        "name": "juniper",
+        "image_url": null,
+        "scientific_name": "Juniperus pfitzeriana 'Gold Coast'",
+        "family": "Cupressaceae"
+    },
+    {
+        "id": 4525,
+        "name": "juniper",
+        "image_url": null,
+        "scientific_name": "Juniperus pfitzeriana 'Kallay's Compact'",
+        "family": "Cupressaceae"
+    },
+    {
+        "id": 4526,
+        "name": "Chinese juniper",
+        "image_url": null,
+        "scientific_name": "Juniperus pfitzeriana 'Mint Julep'",
+        "family": "Cupressaceae"
+    },
+    {
+        "id": 4527,
+        "name": "Chinese juniper",
+        "image_url": null,
+        "scientific_name": "Juniperus pfitzeriana 'Old Gold'",
+        "family": "Cupressaceae"
+    },
+    {
+        "id": 4528,
+        "name": "juniper",
+        "image_url": null,
+        "scientific_name": "Juniperus pfitzeriana 'Saybrook Gold'",
+        "family": "Cupressaceae"
+    },
+    {
+        "id": 4529,
+        "name": "Chinese juniper",
+        "image_url": null,
+        "scientific_name": "Juniperus pfitzeriana 'Sea Green'",
+        "family": "Cupressaceae"
+    },
+    {
+        "id": 4530,
+        "name": "Japanese garden juniper",
+        "image_url": null,
+        "scientific_name": "Juniperus procumbens 'Green Mound'",
+        "family": "Cupressaceae"
+    }
+]

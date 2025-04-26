@@ -1,0 +1,212 @@
+[
+    {
+        "id": 1,
+        "name": "European Silver Fir",
+        "image_url": "https://perenual.com/storage/species_image/1_abies_alba/og/1536px-Abies_alba_SkalitC3A9.jpg",
+        "scientific_name": "Abies alba",
+        "family": null
+    },
+    {
+        "id": 2,
+        "name": "Pyramidalis Silver Fir",
+        "image_url": "https://perenual.com/storage/species_image/2_abies_alba_pyramidalis/og/49255769768_df55596553_b.jpg",
+        "scientific_name": "Abies alba 'Pyramidalis'",
+        "family": null
+    },
+    {
+        "id": 3,
+        "name": "White Fir",
+        "image_url": "https://perenual.com/storage/species_image/3_abies_concolor/og/52292935430_f4f3b22614_b.jpg",
+        "scientific_name": "Abies concolor",
+        "family": "Pinaceae"
+    },
+    {
+        "id": 4,
+        "name": "Candicans White Fir",
+        "image_url": "https://perenual.com/storage/species_image/4_abies_concolor_candicans/og/49283844888_332c9e46f2_b.jpg",
+        "scientific_name": "Abies concolor 'Candicans'",
+        "family": null
+    },
+    {
+        "id": 5,
+        "name": "Fraser Fir",
+        "image_url": "https://perenual.com/storage/species_image/5_abies_fraseri/og/36843539702_e80fc436e0_b.jpg",
+        "scientific_name": "Abies fraseri",
+        "family": "Pinaceae"
+    },
+    {
+        "id": 6,
+        "name": "Golden Korean Fir",
+        "image_url": "https://perenual.com/storage/species_image/6_abies_koreana_aurea/og/49235570926_99ec10781d_b.jpg",
+        "scientific_name": "Abies koreana 'Aurea'",
+        "family": "Pinaceae"
+    },
+    {
+        "id": 7,
+        "name": "Alpine Fir",
+        "image_url": "https://perenual.com/storage/species_image/7_abies_lasiocarpa/og/51002756843_74fae3c2fa_b.jpg",
+        "scientific_name": "Abies lasiocarpa",
+        "family": "Pinaceae"
+    },
+    {
+        "id": 8,
+        "name": "Blue Spanish Fir",
+        "image_url": "https://perenual.com/storage/species_image/8_abies_pinsapo_glauca/og/21657514018_c0d9fed9f4_b.jpg",
+        "scientific_name": "Abies pinsapo 'Glauca'",
+        "family": "Pinaceae"
+    },
+    {
+        "id": 9,
+        "name": "Noble Fir",
+        "image_url": "https://perenual.com/storage/species_image/9_abies_procera/og/49107504112_6bd7effb8b_b.jpg",
+        "scientific_name": "Abies procera",
+        "family": "Pinaceae"
+    },
+    {
+        "id": 10,
+        "name": "Johin Japanese Maple",
+        "image_url": "https://perenual.com/storage/species_image/10_acer_johin/og/pexels-photo-2183508.jpg",
+        "scientific_name": "Acer 'Johin'",
+        "family": null
+    },
+    {
+        "id": 11,
+        "name": "Snakebark Maple",
+        "image_url": "https://perenual.com/storage/species_image/11_acer_davidii/og/6868591754_f4ac5b0510_b.jpg",
+        "scientific_name": "Acer davidii",
+        "family": "Sapindaceae"
+    },
+    {
+        "id": 12,
+        "name": "Amur Maple",
+        "image_url": "https://perenual.com/storage/species_image/12_acer_ginnala/og/10476032513_76ca899bc4_b.jpg",
+        "scientific_name": "Acer ginnala",
+        "family": null
+    },
+    {
+        "id": 13,
+        "name": "Flame Amur Maple",
+        "image_url": "https://perenual.com/storage/species_image/13_acer_ginnala_flame/og/pexels-photo-1649190.jpg",
+        "scientific_name": "Acer ginnala 'Flame'",
+        "family": null
+    },
+    {
+        "id": 14,
+        "name": "Red Rhapsody Amur Maple",
+        "image_url": "https://perenual.com/storage/species_image/14_acer_ginnala_mondy/og/pexels-photo-1789879.jpg",
+        "scientific_name": "Acer ginnala 'Mondy'",
+        "family": null
+    },
+    {
+        "id": 15,
+        "name": "Ruby Slippers Amur Maple",
+        "image_url": "https://perenual.com/storage/species_image/15_acer_ginnala_ruby_slippers/og/pexels-photo-1640820.jpg",
+        "scientific_name": "Acer ginnala 'Ruby Slippers'",
+        "family": null
+    },
+    {
+        "id": 16,
+        "name": "Paperbark Maple",
+        "image_url": "https://perenual.com/storage/species_image/16_acer_griseum/og/5158906371_ed08a86876_b.jpg",
+        "scientific_name": "Acer griseum",
+        "family": "Sapindaceae"
+    },
+    {
+        "id": 17,
+        "name": "Fullmoon Maple",
+        "image_url": "https://perenual.com/storage/species_image/17_acer_japonicum/og/7175475239_52543c51b3_b.jpg",
+        "scientific_name": "Acer japonicum",
+        "family": "Sapindaceae"
+    },
+    {
+        "id": 18,
+        "name": "Cutleaf Fullmoon Maple",
+        "image_url": "https://perenual.com/storage/species_image/18_acer_japonicum_aconitifolium/og/23528789198_c419363323_b.jpg",
+        "scientific_name": "Acer japonicum 'Aconitifolium'",
+        "family": "Sapindaceae"
+    },
+    {
+        "id": 19,
+        "name": "Attaryi Fullmoon Maple*",
+        "image_url": "https://perenual.com/storage/species_image/19_acer_japonicum_attaryi/og/pexels-photo-669323.jpg",
+        "scientific_name": "Acer japonicum 'Attaryi'",
+        "family": null
+    },
+    {
+        "id": 20,
+        "name": "Golden Fullmoon Maple",
+        "image_url": "https://perenual.com/storage/species_image/20_acer_japonicum_aureum/og/2560px-Acer_shirasawanum_27Aureum27.jpg",
+        "scientific_name": "Acer japonicum 'Aureum'",
+        "family": null
+    },
+    {
+        "id": 21,
+        "name": "Emmett's Pumpkin Fullmoon Maple",
+        "image_url": "https://perenual.com/storage/species_image/21_acer_japonicum_emmetts_pumpkin/og/Acer_shirasawanum_28golden_fullmoon_maple29_2_284633285838129.jpg",
+        "scientific_name": "Acer japonicum 'Emmett's Pumpkin'",
+        "family": null
+    },
+    {
+        "id": 22,
+        "name": "Green Cascade Maple",
+        "image_url": "https://perenual.com/storage/species_image/22_acer_japonicum_green_cascade/og/4847225395_2509ee2bfe_b.jpg",
+        "scientific_name": "Acer japonicum 'Green Cascade'",
+        "family": "Sapindaceae"
+    },
+    {
+        "id": 23,
+        "name": "Big Leaf Maple",
+        "image_url": "https://perenual.com/storage/species_image/23_acer_macrophyllum/og/52135137216_8a124b5188_b.jpg",
+        "scientific_name": "Acer macrophyllum",
+        "family": "Sapindaceae"
+    },
+    {
+        "id": 24,
+        "name": "Mocha Rose Big Leaf Maple",
+        "image_url": "https://perenual.com/storage/species_image/24_acer_macrophyllum_mocha_rose/og/4715169892_220a9d39f6_b.jpg",
+        "scientific_name": "Acer macrophyllum 'Mocha Rose'",
+        "family": "Sapindaceae"
+    },
+    {
+        "id": 25,
+        "name": "Flamingo Boxelder",
+        "image_url": "https://perenual.com/storage/species_image/25_acer_negundo_flamingo/og/5867345385_a9dff5bee7_b.jpg",
+        "scientific_name": "Acer negundo 'Flamingo'",
+        "family": "Sapindaceae"
+    },
+    {
+        "id": 26,
+        "name": "Kelly's Gold Boxelder",
+        "image_url": "https://perenual.com/storage/species_image/26_acer_negundo_kellys_gold/og/28819730054_e2a2b797c9_b.jpg",
+        "scientific_name": "Acer negundo 'Kelly's Gold'",
+        "family": "Sapindaceae"
+    },
+    {
+        "id": 27,
+        "name": "Japanese Maple",
+        "image_url": "https://perenual.com/storage/species_image/27_acer_palmatum/og/2560px-Acer_palmatum_27Bloodgood27_kz01.jpg",
+        "scientific_name": "Acer palmatum",
+        "family": "Sapindaceae"
+    },
+    {
+        "id": 28,
+        "name": "Aka Shigitatsu Sawa Japanese Maple",
+        "image_url": "https://perenual.com/storage/species_image/28_acer_palmatum_aka_shigitatsu_sawa/og/Acer_palmatum_Aka_shigitatsu_sawa_2zz.jpg",
+        "scientific_name": "Acer palmatum 'Aka Shigitatsu Sawa'",
+        "family": null
+    },
+    {
+        "id": 29,
+        "name": "Alpenweiss Variegated Dwarf Japanese Maple*",
+        "image_url": null,
+        "scientific_name": "Acer palmatum 'Alpenweiss'",
+        "family": null
+    },
+    {
+        "id": 30,
+        "name": "Ao Shime No Uchi Japanese Maple",
+        "image_url": "https://perenual.com/storage/species_image/30_acer_palmatum_ao_shime_no_uchi/og/Acer_palmatum_Ao_shime_no_uchi_3zz.jpg",
+        "scientific_name": "Acer palmatum 'Ao Shime No Uchi'",
+        "family": null
+    }
+]

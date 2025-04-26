@@ -30,7 +30,7 @@ export default function ProfilePage() {
       formData.append('username', username);
       formData.append('password', password);
       
-      const uploadResponse = await fetch('/login', {
+      const uploadResponse = await fetch('/api/login', {
         method: 'POST',
         body: formData
       });
@@ -60,7 +60,7 @@ export default function ProfilePage() {
       formData.append('username', username);
       formData.append('password', hash);
       
-      const uploadResponse = await fetch('/createaccount', {
+      const uploadResponse = await fetch('/api/createaccount', {
         method: 'POST',
         body: formData
       });

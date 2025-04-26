@@ -1,0 +1,212 @@
+[
+    {
+        "id": 4711,
+        "name": "English lavender",
+        "image_url": null,
+        "scientific_name": "Lavandula angustifolia 'Royal Velvet'",
+        "family": "Lamiaceae"
+    },
+    {
+        "id": 4712,
+        "name": "English lavender",
+        "image_url": null,
+        "scientific_name": "Lavandula angustifolia 'Sharon Roberts'",
+        "family": "Lamiaceae"
+    },
+    {
+        "id": 4713,
+        "name": "English lavender",
+        "image_url": null,
+        "scientific_name": "Lavandula angustifolia 'SuperBlue'",
+        "family": "Lamiaceae"
+    },
+    {
+        "id": 4714,
+        "name": "lavandin",
+        "image_url": null,
+        "scientific_name": "Lavandula intermedia 'Alba'",
+        "family": "Lamiaceae"
+    },
+    {
+        "id": 4715,
+        "name": "lavandin",
+        "image_url": null,
+        "scientific_name": "Lavandula intermedia (Dutch Group)",
+        "family": "Lamiaceae"
+    },
+    {
+        "id": 4716,
+        "name": "lavandin",
+        "image_url": null,
+        "scientific_name": "Lavandula intermedia 'Fred Boutin'",
+        "family": "Lamiaceae"
+    },
+    {
+        "id": 4717,
+        "name": "lavandin",
+        "image_url": null,
+        "scientific_name": "Lavandula intermedia 'Grosso'",
+        "family": "Lamiaceae"
+    },
+    {
+        "id": 4718,
+        "name": "lavender",
+        "image_url": null,
+        "scientific_name": "Lavandula intermedia 'Niko' PHENOMENAL",
+        "family": "Lamiaceae"
+    },
+    {
+        "id": 4719,
+        "name": "lavandin",
+        "image_url": null,
+        "scientific_name": "Lavandula intermedia 'Provence'",
+        "family": "Lamiaceae"
+    },
+    {
+        "id": 4720,
+        "name": "French lace",
+        "image_url": null,
+        "scientific_name": "Lavandula multifida",
+        "family": "Lamiaceae"
+    },
+    {
+        "id": 4721,
+        "name": "lavender",
+        "image_url": null,
+        "scientific_name": "Lavandula 'Regal Splendour'",
+        "family": "Lamiaceae"
+    },
+    {
+        "id": 4722,
+        "name": "lavender",
+        "image_url": null,
+        "scientific_name": "Lavandula 'Silver Frost'",
+        "family": "Lamiaceae"
+    },
+    {
+        "id": 4723,
+        "name": "Spanish lavender",
+        "image_url": null,
+        "scientific_name": "Lavandula stoechas 'Bandera Deep Rose'",
+        "family": "Lamiaceae"
+    },
+    {
+        "id": 4724,
+        "name": "tree mallow",
+        "image_url": null,
+        "scientific_name": "Lavatera arborea",
+        "family": "Malvaceae"
+    },
+    {
+        "id": 4725,
+        "name": "tree mallow",
+        "image_url": null,
+        "scientific_name": "Lavatera trimestris",
+        "family": "Malvaceae"
+    },
+    {
+        "id": 4726,
+        "name": "henna",
+        "image_url": null,
+        "scientific_name": "Lawsonia inermis",
+        "family": "Lythraceae"
+    },
+    {
+        "id": 4727,
+        "name": "Cooper\u2019s African hyacinth",
+        "image_url": null,
+        "scientific_name": "Ledebouria cooperi",
+        "family": "Liliaceae"
+    },
+    {
+        "id": 4728,
+        "name": "leea",
+        "image_url": null,
+        "scientific_name": "Leea guineensis",
+        "family": "Vitaceae"
+    },
+    {
+        "id": 4729,
+        "name": "corkwood",
+        "image_url": null,
+        "scientific_name": "Leitneria floridana",
+        "family": "Simaroubaceae"
+    },
+    {
+        "id": 4730,
+        "name": "common duckweed",
+        "image_url": null,
+        "scientific_name": "Lemna minor",
+        "family": "Araceae"
+    },
+    {
+        "id": 4731,
+        "name": "lion's ear",
+        "image_url": null,
+        "scientific_name": "Leonotis leonurus",
+        "family": "Lamiaceae"
+    },
+    {
+        "id": 4732,
+        "name": "edelweiss",
+        "image_url": null,
+        "scientific_name": "Leontopodium alpinum",
+        "family": "Asteraceae"
+    },
+    {
+        "id": 4733,
+        "name": "Siberian edelweiss",
+        "image_url": null,
+        "scientific_name": "Leontopodium palibinianum",
+        "family": "Asteraceae"
+    },
+    {
+        "id": 4734,
+        "name": "motherwort",
+        "image_url": null,
+        "scientific_name": "Leonurus cardiaca",
+        "family": "Lamiaceae"
+    },
+    {
+        "id": 4735,
+        "name": "brass buttons",
+        "image_url": null,
+        "scientific_name": "Leptinella squalida",
+        "family": "Asteraceae"
+    },
+    {
+        "id": 4736,
+        "name": "brass buttons",
+        "image_url": null,
+        "scientific_name": "Leptinella squalida 'Platt's Black'",
+        "family": "Asteraceae"
+    },
+    {
+        "id": 4737,
+        "name": "leptodermis",
+        "image_url": null,
+        "scientific_name": "Leptodermis oblonga",
+        "family": "Rubiaceae"
+    },
+    {
+        "id": 4738,
+        "name": "broom tea tree",
+        "image_url": null,
+        "scientific_name": "Leptospermum scoparium",
+        "family": "Myrtaceae"
+    },
+    {
+        "id": 4739,
+        "name": "shrub lespedeza",
+        "image_url": null,
+        "scientific_name": "Lespedeza bicolor",
+        "family": "Fabaceae"
+    },
+    {
+        "id": 4740,
+        "name": "bush clover",
+        "image_url": null,
+        "scientific_name": "Lespedeza bicolor 'Little Buddy'",
+        "family": "Fabaceae"
+    }
+]
