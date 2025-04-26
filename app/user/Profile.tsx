@@ -1,9 +1,8 @@
-import styles from '../styles/Profile.module.css';
-
 import React, { useState, useEffect } from 'react';
-import { View, Text, TextInput, Button } from 'react-native';
+import { View, Text, TextInput, Button, Image, StyleSheet, TouchableHighlight } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import bcrypt from 'bcryptjs';
+import styles from '../styles/Profile.module.css';
 
 export default function ProfilePage() {
   const [mode, setMode] = useState<'initial' | 'login' | 'create'>('initial');
@@ -95,9 +94,18 @@ export default function ProfilePage() {
   if (isLoggedIn) {
     return (
       <div className={styles.container}>
-        <Text className={styles.title}>Welcome, {username}!</Text>
+        <div className={styles.profileWrapper}>
+          <Image source={require('../../assets/images/defaultprofile.jpg')}
+              style={profileStyles.profileImage}/>
+          <div>
+            <div className={styles.title}>{username}</div>
+            <Text>Plants: 0</Text>
+          </div>
+        </div>
         <View className={styles.buttonContainer}>
-          <Button title="Logout" onPress={handleLogout}/>
+          <TouchableHighlight style={profileStyles.buttonContainerGreen}  onPress={handleLogout}>
+              <Text style={profileStyles.buttonText}>Log out</Text>
+          </TouchableHighlight>
         </View>
       </div>
     );
@@ -107,12 +115,17 @@ export default function ProfilePage() {
     <div className={styles.container}>
       {mode === 'initial' ? (
         <div>
-          <View className={styles.buttonContainer}>
-            <Button title="Login" onPress={() => setMode('login')}/>
-          </View>
-          <View className={styles.buttonContainer}>
-            <Button title="Create Account" onPress={() => setMode('create')}/>
-          </View>
+          <div className={styles.title}>Welcome to The Little Gardener!</div>
+          <div className={styles.buttonContainer}>
+            <TouchableHighlight onPress={() => setMode('login')} style={profileStyles.buttonContainerGreen}>
+              <Text style={profileStyles.buttonText}>Log in</Text>
+            </TouchableHighlight>
+          </div>
+          <div className={styles.buttonContainer}>
+            <TouchableHighlight onPress={() => setMode('create')} style={profileStyles.buttonContainer}>
+              <Text style={profileStyles.buttonText}>I'm a new gardener!</Text>
+            </TouchableHighlight>
+          </div>
         </div>
       ) : (
         <div>
@@ -122,6 +135,7 @@ export default function ProfilePage() {
               placeholder="Username"
               value={username}
               onChangeText={setUsername}
+              style={profileStyles.inputField}
             />
           </div>
           <div>
@@ -131,10 +145,13 @@ export default function ProfilePage() {
               value={password}
               onChangeText={setPassword}
               secureTextEntry
+              style={profileStyles.inputField}
             />
           </div>
           <View className={styles.buttonContainer}>
-            <Button title={mode === 'login' ? 'Login' : 'Create Account'} onPress={mode === 'login' ? handleLogin : handleCreateAccount}/>
+            <TouchableHighlight onPress={mode === 'login' ? handleLogin : handleCreateAccount} style={profileStyles.buttonContainerGreen}>
+              <Text style={profileStyles.buttonText}>{mode === 'login' ? 'Login' : 'Create Account'}</Text>
+            </TouchableHighlight>
           </View>
           {error && <Text className={styles.errorText}>{error}</Text>}
         </div>
@@ -142,3 +159,38 @@ export default function ProfilePage() {
     </div>
   );
 }
+
+const profileStyles = StyleSheet.create({
+  profileImage: {
+    width: 100,
+    height: 100,
+    borderRadius: 100
+  },
+  buttonContainer: {
+    backgroundColor: '#F1EB91',
+    borderRadius: 100,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  buttonContainerGreen: {
+    backgroundColor: '#BBEA9B',
+    borderRadius: 100,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  buttonText: {
+    fontSize: 16,
+    textAlign: 'center',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+  },
+  inputField: {
+    fontSize: 16,
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    margin: 12,
+    borderColor: '#D9D9D9',
+    borderWidth: 1,
+    borderRadius: 100
+  }
+})
