@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Text, View, Button, Image, StyleSheet, ActivityIndicator, Alert, Platform } from 'react-native';
+import { Text, View, Button, Image, StyleSheet, ActivityIndicator, Alert, Platform, TouchableHighlight } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
+import styles from './styles/Home.module.css';
 
 const HARDCODED_PROMPT = "Tell me exactly what type of plant this is, only give me that and nothing else.";
 
@@ -102,19 +103,19 @@ export default function Index() {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Plant Analyzer</Text>
+    <div className={styles.container}>
+      <div className={styles.title}>Plant Analyzer</div>
 
-      <View style={styles.buttonContainer}>
+      <View className={styles.buttonContainer}>
           <Button title="Pick an Image" onPress={pickImage} />
       </View>
 
       {image && (
-          <Image source={{ uri: image.uri }} style={styles.image} resizeMode="contain" />
+          <Image source={{ uri: image.uri }} className={styles.image} resizeMode="contain" />
       )}
 
       {image && (
-          <View style={styles.buttonContainer}>
+          <View className={styles.buttonContainer}>
               <Button
                   title="Analyze Plant"
                   onPress={uploadImage}
@@ -124,80 +125,28 @@ export default function Index() {
       )}
 
       {isLoading && (
-        <View style={styles.statusContainer}>
+        <View className={styles.statusContainer}>
           <ActivityIndicator size="large" color="#0000ff" />
-          <Text style={styles.statusText}>Analyzing, please wait...</Text>
+          <Text className={styles.statusText}>Analyzing, please wait...</Text>
         </View>
       )}
 
       {error && (
-        <View style={styles.statusContainer}>
-          <Text style={styles.errorText}>Error: {error}</Text>
+        <View className={styles.statusContainer}>
+          <Text className={styles.errorText}>Error: {error}</Text>
         </View>
       )}
 
       {apiResponse && (
-        <View style={styles.statusContainer}>
-          <Text style={styles.responseText}>Analysis Result:</Text>
+        <View className={styles.statusContainer}>
+          <Text className={styles.responseText}>Analysis Result:</Text>
           <Text>{apiResponse}</Text>
         </View>
       )}
 
       {!image && !isLoading && !error && !apiResponse && (
-        <Text style={styles.placeholderText}>Select an image to begin.</Text>
+        <Text className={styles.placeholderText}>Select an image to begin.</Text>
       )}
-    </View>
+    </div>
   );
 }
-
-// --- Styles (No changes needed here) ---
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'flex-start', // Align items to the top
-    paddingTop: 50, // Add padding at the top
-    paddingHorizontal: 20,
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 20,
-  },
-  buttonContainer: {
-    marginVertical: 15,
-    width: '80%', // Give buttons some width
-  },
-  image: {
-    width: 300,
-    height: 300,
-    marginVertical: 20,
-    borderWidth: 1,
-    borderColor: '#ccc',
-  },
-  statusContainer: {
-    marginTop: 20,
-    alignItems: 'center',
-    padding: 10,
-    width: '90%',
-  },
-  statusText: {
-      marginTop: 10,
-      fontSize: 16,
-  },
-  errorText: {
-    color: 'red',
-    fontSize: 16,
-    textAlign: 'center',
-  },
-  responseText: {
-      fontSize: 18,
-      fontWeight: 'bold',
-      marginBottom: 10,
-  },
-  placeholderText: {
-      marginTop: 30,
-      fontSize: 16,
-      color: '#888',
-  }
-});

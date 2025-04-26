@@ -1,0 +1,1 @@
+import styles from '../styles/Profile.module.css';
