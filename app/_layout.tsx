@@ -95,12 +95,12 @@ export default function RootLayout() {
                 viewBox="0 0 64 81"
                 fill="none"
                 style={styles.svgBackground}
-              >
-                <Path
-                  d="M32 0C49.6729 2.78322e-05 63.9998 14.3262 64 31.999V80.9814H0V31.999C0.000229513 14.3261 14.3271 0 32 0Z"
-                  fill="#C9E6FF"
-                />
-              </Svg>
+                >
+                  <Path
+                    d="M32 0C49.6729 2.78322e-05 63.9998 14.3262 64 31.999V80.9814H0V31.999C0.000229513 14.3261 14.3271 0 32 0Z"
+                    fill="#C9E6FF"
+                  />
+                </Svg>
               : <></>
               }
               </View>
