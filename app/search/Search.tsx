@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Text, View, StyleSheet, TextInput, TouchableOpacity, Keyboard, ActivityIndicator, FlatList, TouchableHighlight } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import styles from '../styles/Search.module.css';
+// import styles from '../styles/Search.module.css';
 
 interface Plant {
   id: number;
@@ -139,7 +139,7 @@ export default function SearchScreen() {
 
     const renderPlantItem = ({ item }: { item: Plant }) => (
         <View style={searchStyles.plantItem}>
-            <div className={styles.flexSpace}>
+            <View style={searchStyles.flexSpace}>
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                 {item.image_url ? (
                     <img 
@@ -160,7 +160,7 @@ export default function SearchScreen() {
                 <TouchableHighlight style={searchStyles.addButton} onPress={() => console.log('placeholder onpress')}>
                     <Text style={searchStyles.buttonText}>Add to garden</Text>
                 </TouchableHighlight>
-            </div>
+            </View>
         </View>
     );
 
@@ -317,5 +317,10 @@ const searchStyles = StyleSheet.create({
         textAlign: 'center',
         paddingVertical: 10,
         paddingHorizontal: 20,
+    },
+    flexSpace: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
     }
 });
