@@ -12,6 +12,7 @@ export async function POST(request: Request): Promise<Response> {
     const plantIdStr = formData.get('plantId') as string | null;
     const location = formData.get('location') as string | null;
     const notes = formData.get('notes') as string | null;
+    const imageUrl = formData.get('image_url') as string | null;
 
     if (!username || !customName || !plantIdStr) {
       return Response.json(
@@ -44,6 +45,11 @@ export async function POST(request: Request): Promise<Response> {
       notes: notes,
       plantImages: [] as { image_url: string }[]
     };
+
+    // If there's an image URL, add it to the plantImages array
+    if (imageUrl) {
+      newPlantEntry.plantImages.push({ image_url: imageUrl });
+    }
 
     user.gardenItems.push(newPlantEntry);
     await user.save();

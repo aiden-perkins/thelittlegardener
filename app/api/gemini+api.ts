@@ -1,6 +1,8 @@
 import { FileDataPart, GoogleGenerativeAI } from '@google/generative-ai';
-import { readFile } from 'fs/promises';
+import { writeFile, mkdir } from 'fs/promises';
 import path from 'path';
+import { API_BASE_URL } from '@/lib/config';
+
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 const GEMINI_PLANTS_FILE_URI = 'https://generativelanguage.googleapis.com/v1beta/files/t8vox35gpwgp';
@@ -133,17 +135,35 @@ export async function POST(request: Request): Promise<Response> {
                 throw new Error("Response missing required plant identification data");
             }
             
+            // Generate a unique filename
+            const timestamp = Date.now();
+            const filename = `plant_${timestamp}.jpg`;
+
+            // Create upload directory if it doesn't exist
+            const uploadDir = path.join(process.cwd(), 'public', 'uploads', 'plants');
+            await mkdir(uploadDir, { recursive: true });
+
+            // Save the file
+            const imagePath = path.join(uploadDir, filename);
+            const buffer = Buffer.from(await imageBlob.arrayBuffer());
+            await writeFile(imagePath, buffer);
+
+            // Add the image URL to the response
+            const imageUrl = `${API_BASE_URL}/uploads/plants/${filename}`;
+
+            // Add this to your response
             return Response.json(
-                {
-                    success: true,
-                    message: 'Plant identified successfully by Gemini.',
-                    data: {
-                        identifiedPlant: parsedResponse.identifiedPlant,
-                        alternatives: parsedResponse.alternatives || [],
-                        notes: parsedResponse.notes || ""
-                    }
-                },
-                { status: 200 }
+            { 
+                success: true, 
+                message: 'Plant identified successfully by Gemini.',
+                data: {
+                identifiedPlant: parsedResponse.identifiedPlant,
+                alternatives: parsedResponse.alternatives || [],
+                notes: parsedResponse.notes || "",
+                imageUrl: imageUrl // Add this line
+                }
+            },
+            { status: 200 }
             );
         } catch (parseError) {
             console.error("Failed to parse Gemini response as JSON:", parseError);

@@ -42,3 +42,4 @@ app-example
 .idea/
 android/
 cache/
+public/
