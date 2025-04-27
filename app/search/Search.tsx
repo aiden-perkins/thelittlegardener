@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Text, View, Image, StyleSheet, TextInput, TouchableOpacity, Keyboard, ActivityIndicator, FlatList, TouchableHighlight } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-// import styles from '../styles/Search.module.css';
 import { router } from 'expo-router';
 import { API_BASE_URL } from '@/lib/config';
 import Svg, { Path } from 'react-native-svg';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 interface Plant {
   id: number;
@@ -123,17 +123,20 @@ export default function SearchScreen() {
     };
     
     const handleAddToGarden = (plant: Plant) => {
-      router.push({
-        pathname: '/plant/AddPlant',
-        params: {
-          id: plant.id.toString(),
-          name: plant.name,
-          scientific_name: plant.scientific_name || '',
-          family: plant.family || '',
-          image_url: plant.image_url || '',
-          source: '/search/Search'
-        }
-      });
+      AsyncStorage.setItem('triggerGardenRefresh', 'true')
+        .then(() => {
+          router.push({
+            pathname: '/plant/AddPlant',
+            params: {
+              id: plant.id.toString(),
+              name: plant.name,
+              scientific_name: plant.scientific_name || '',
+              family: plant.family || '',
+              image_url: plant.image_url || '',
+              source: '/search/Search'
+            }
+          });
+        });
     };
     
     const handlePlantDetails = (plant: Plant) => {

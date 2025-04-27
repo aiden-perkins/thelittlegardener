@@ -25,18 +25,16 @@ export default function AddPlant() {
   const scientific_name = params.scientific_name as string | undefined;
   const family = params.family as string | undefined;
   const image_url = params.image_url as string | undefined;
-  const detected_name = params.detected_name as string | undefined;
   const goBackTo = params.source as ExternalPathString;
 
   const [plantData, setPlantData] = useState({
-    name: name || detected_name || '',
-    scientificName: scientific_name || '',
-    family: family || '',
+    name: params.name || '',
+    scientificName: params.scientific_name || '',
+    family: params.family || '',
     imageUrl: image_url || '',
     customName: '', // This will be the custom_name in the UserPlants schema
     location: '',
     notes: '',
-    wateringFrequency: '',
   });
 
   const [loading, setLoading] = useState(false);
@@ -77,6 +75,8 @@ export default function AddPlant() {
       formData.append('plantId', id || '0');
       formData.append('location', plantData.location);
       formData.append('notes', plantData.notes);
+      const currentImageUrl = params.image_url as string | undefined;
+      formData.append('image_url', currentImageUrl || '');
 
       // Call API to add plant to user's garden
       const response = await fetch(`${API_BASE_URL}/api/addplant`, {
@@ -88,6 +88,7 @@ export default function AddPlant() {
 
       if (result.success) {
         Alert.alert('Success', 'Plant added to your garden!');
+        resetForm(); // Reset the form fields
         router.push('/'); // Navigate back to garden view
       } else {
         setError(result.message || 'Failed to add plant to garden');
@@ -97,6 +98,15 @@ export default function AddPlant() {
     } finally {
       setLoading(false);
     }
+  };
+  
+  const resetForm = () => {
+    setPlantData({
+      ...plantData,
+      customName: '',
+      location: '',
+      notes: '',
+    });
   };
 
   const handleCancel = () => {
