@@ -250,7 +250,7 @@ export default function MyPlant() {
         </Svg>
       )}
       <TouchableOpacity style={styles.cameraButton} onPress={handleCameraPress}>
-        <Ionicons name="camera" size={24} color="#555" />
+        <Ionicons name="camera-outline" size={24} color="#555" />
       </TouchableOpacity>
     </View>
   );
