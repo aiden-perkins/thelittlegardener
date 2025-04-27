@@ -18,6 +18,14 @@ export default function RootLayout() {
         }}
         >
         <Tabs.Screen
+          name="plant/MyPlant"
+          options={{
+            href: null,
+            tabBarShowLabel: false,
+            headerShown: false,
+          }}
+        />
+        <Tabs.Screen
             name="search/Search"
             options={{
               title: 'Search',

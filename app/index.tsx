@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Text, View, Image, StyleSheet, ActivityIndicator, Alert, Platform, TouchableHighlight, FlatList, Modal } from 'react-native';
+import { Text, View, Image, StyleSheet, ActivityIndicator, Alert, Platform, TouchableHighlight, FlatList, Modal, TouchableOpacity } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import { router } from 'expo-router';
 import { useFocusEffect } from '@react-navigation/native';
@@ -241,9 +241,24 @@ export default function Index() {
       setImage(null);
     }
   };
+  const handleMyPlant = (plantData: any) => {
+    AsyncStorage.getItem('user')
+      .then(userJson => {
+        const user = userJson ? JSON.parse(userJson) : { username: '' };
+        router.push({
+          pathname: '/plant/MyPlant',
+          params: {
+            id: plantData.plantId.toString(),
+            plantName: plantData.custom_name,
+            userId: user.username,
+            source: '/'
+          }
+        });
+      })
+  };
 
   const renderPlantItem = ({ item }: { item: any }) => (
-    <View style={homeStyles.imageContainer}>
+    <TouchableOpacity style={homeStyles.imageContainer} onPress={() => handleMyPlant(item)}>
       {item.plantImages && item.plantImages.length > 0 ? (
         <Image source={{ uri: item.plantImages[0].image_url }} style={homeStyles.gridImage} />
       ) : (
@@ -252,7 +267,7 @@ export default function Index() {
         </View>
       )}
       <Text style={homeStyles.plantName}>{item.custom_name}</Text>
-    </View>
+    </TouchableOpacity>
   );
 
   if (cameraActive) {
