@@ -1,8 +1,11 @@
 import { Tabs } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
 import IonIcons from '@expo/vector-icons/Ionicons';
 import { View, StyleSheet } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
+import React from 'react';
+import {
+  StatusBar,
+} from 'react-native';
 
 export default function RootLayout() {
   return (
@@ -10,6 +13,14 @@ export default function RootLayout() {
       <Tabs>
         <Tabs.Screen
           name="plant/AddPlant"
+          options={{
+            href: null,
+            tabBarShowLabel: false,
+            headerShown: false,
+          }}
+        />
+        <Tabs.Screen
+          name="plant/PlantDetails"
           options={{
             href: null,
             tabBarShowLabel: false,
@@ -117,7 +128,10 @@ export default function RootLayout() {
           }}
         />
       </Tabs>
-      <StatusBar style="auto" />
+      <StatusBar
+        barStyle='dark-content'
+        showHideTransition='fade'
+      />
     </>
   );
 }
