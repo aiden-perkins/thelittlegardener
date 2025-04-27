@@ -285,17 +285,18 @@ const searchStyles = StyleSheet.create({
     paddingTop: 10,
   },
   title: {
-    fontSize: 32,
+    fontSize: 28,
     fontWeight: 'bold',
     color: '#3E51CC',
     marginTop: 60,
     textAlign: 'center'
   },
+  
   searchBarContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: '#E0F0D7', // Lighter green for less intensity
-    borderRadius: 25, // Slightly less rounded
+    borderRadius: 20, 
     paddingHorizontal: 15,
     paddingVertical: 8, // Adjusted padding
     width: '100%',
@@ -311,6 +312,7 @@ const searchStyles = StyleSheet.create({
     color: '#333',
     paddingVertical: 5,
   },
+
   clearIcon: {
     marginLeft: 8,
     padding: 5,
@@ -322,29 +324,36 @@ const searchStyles = StyleSheet.create({
     flex: 1,
     width: '100%',
   },
-    resultsListContent: {
-        paddingTop: 5,
-        paddingBottom: 20, // Add padding at the bottom of the list
-    },
+  resultsListContent: {
+    paddingTop: 5,
+    paddingBottom: 20, // Add padding at the bottom of the list
+  },
+
   plantItem: {
     backgroundColor: '#F5F7FF',
-    padding: 15,
+    padding: 16,
     borderRadius: 8,
-    marginBottom: 10,
+    marginBottom: 13,
+  },
+  flexSpace: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
   plantName: {
-    fontSize: 14,
+    fontSize: 16,
     fontWeight: 'bold',
     color: '#5167F2',
     marginBottom: 2,
     maxWidth: 180
   },
   plantDetail: {
-    fontSize: 10,
+    fontSize: 12,
     fontStyle: 'italic',
     color: '#555',
     marginBottom: 0,
   },
+
   errorText: {
     color: 'red',
     textAlign: 'center',
@@ -367,7 +376,7 @@ const searchStyles = StyleSheet.create({
       fontSize: 14,
     },
     addButton: {
-        backgroundColor: '#F1EB91',
+        backgroundColor: '#F3E886',
         borderRadius: 100,
         alignItems: 'center',
         justifyContent: 'center',
@@ -381,11 +390,7 @@ const searchStyles = StyleSheet.create({
         paddingVertical: 10,
         paddingHorizontal: 20,
     },
-    flexSpace: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-    },
+
     star1: {
       position: 'absolute',
       right: '8%',
