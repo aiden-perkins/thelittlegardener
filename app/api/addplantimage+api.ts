@@ -1,6 +1,6 @@
 import { writeFile, mkdir } from 'fs/promises';
 import path from 'path';
-import dbConnect from '@/lib/dbConnect';
+import dbConnect, {closeConnection} from '@/lib/dbConnect';
 import User from '@/models/User';
 import { API_BASE_URL } from '@/lib/config';
 
@@ -76,5 +76,7 @@ export async function POST(request: Request): Promise<Response> {
       { success: false, message: `Server error: ${error.message}` },
       { status: 500 }
     );
+  } finally {
+    closeConnection();
   }
 }

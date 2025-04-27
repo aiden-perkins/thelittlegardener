@@ -1,6 +1,6 @@
 import bcrypt from 'bcryptjs';
 import User from '@/models/User';
-import dbConnect from '@/lib/dbConnect';
+import dbConnect, {closeConnection} from '@/lib/dbConnect';
 
 export async function POST(request: Request): Promise<Response> {
   await dbConnect();
@@ -36,7 +36,8 @@ export async function POST(request: Request): Promise<Response> {
       {
         success: true,
         message: 'Account creation successful!',
-        user: { username: result.username }
+        user: { username: result.username,
+              plantCount: 0 }
       },
       { status: 200 }
     );
@@ -47,5 +48,7 @@ export async function POST(request: Request): Promise<Response> {
       { success: false, message: 'Server error during account creation' },
       { status: 500 }
     );
+  } finally {
+    closeConnection();
   }
 }

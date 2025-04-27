@@ -11,6 +11,7 @@ export default function ProfilePage() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState<string | null>(null);
+  const [plantCount, setPlantCount] = useState(0);
 
   useEffect(() => {
     checkLoginStatus();
@@ -19,8 +20,10 @@ export default function ProfilePage() {
   const checkLoginStatus = async () => {
     const user = await AsyncStorage.getItem('user');
     if (user) {
+      const userData = JSON.parse(user);
       setIsLoggedIn(true);
-      setUsername(JSON.parse(user).username);
+      setUsername(userData.username);
+      setPlantCount(userData.plantCount || 0); // Use the stored plant count
     }
   };
 
@@ -39,9 +42,13 @@ export default function ProfilePage() {
       const response = await uploadResponse.json();
       
       if (response.success) {
-        await AsyncStorage.setItem('user', JSON.stringify({ username }));
+        await AsyncStorage.setItem('user', JSON.stringify({
+          username, 
+          plantCount: response.user.plantCount || 0
+        }));
         await AsyncStorage.setItem('triggerGardenRefresh', 'true');
         setIsLoggedIn(true);
+        setPlantCount(response.user.plantCount || 0); // Set the plant count from API response
         setError(null);
       } else {
         setError(`Login failed: ${response.message}`);
@@ -67,9 +74,13 @@ export default function ProfilePage() {
       const response = await uploadResponse.json();
       
       if (response.success) {
-        await AsyncStorage.setItem('user', JSON.stringify({ username }));
+        await AsyncStorage.setItem('user', JSON.stringify({
+          username,
+          plantCount: 0 // New users have 0 plants
+        }));
         await AsyncStorage.setItem('triggerGardenRefresh', 'true');
         setIsLoggedIn(true);
+        setPlantCount(0); // Explicitly set to 0 for new users
         setError(null);
       } else {
         setError(`Account creation failed: ${response.message}`);
@@ -99,7 +110,7 @@ export default function ProfilePage() {
               style={profileStyles.profileImage}/>
           <View>
             <Text style={profileStyles.title}>{username}</Text>
-            <Text style={profileStyles.text}>Plants: 0</Text>
+            <Text style={profileStyles.text}>Plants: {plantCount}</Text>
           </View>
         </View>
         <View style={profileStyles.buttonContainer}>

@@ -1,4 +1,4 @@
-import dbConnect from '@/lib/dbConnect';
+import dbConnect, {closeConnection} from '@/lib/dbConnect';
 import User from '@/models/User';
 
 export async function POST(request: Request): Promise<Response> {
@@ -38,5 +38,7 @@ export async function POST(request: Request): Promise<Response> {
       { success: false, message: `Server error: ${error.message}` },
       { status: 500 }
     );
+  } finally {
+    closeConnection();
   }
 }

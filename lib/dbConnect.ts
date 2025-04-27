@@ -28,10 +28,8 @@ function isConnected(): boolean {
 }
 
 async function dbConnect(): Promise<Mongoose> {
-  console.log('Current connection state:', mongoose.connection.readyState);
   
   if (cached.conn && isConnected()) {
-    console.log('DB Cache: Using cached connection');
     return cached.conn;
   }
 
@@ -48,11 +46,9 @@ async function dbConnect(): Promise<Mongoose> {
   };
 
   try {
-    console.log('DB Cache: Creating new connection');
     const mongooseInstance = await mongoose.connect(MONGODB_URI!, opts);
 
     mongoose.connection.on('disconnected', () => {
-      console.log('MongoDB disconnected!');
       cached.conn = null;
       cached.promise = null;
     });
@@ -64,7 +60,6 @@ async function dbConnect(): Promise<Mongoose> {
     });
 
     cached.conn = mongooseInstance;
-    console.log('MongoDB Connected Successfully!');
     return mongooseInstance;
   } catch (error) {
     console.error('MongoDB Connection Error:', error);

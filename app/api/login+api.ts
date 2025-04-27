@@ -1,6 +1,6 @@
 import bcrypt from 'bcryptjs';
 import User from '@/models/User';
-import dbConnect from '@/lib/dbConnect';
+import dbConnect, {closeConnection} from '@/lib/dbConnect';
 
 export async function POST(request: Request): Promise<Response> {
   await dbConnect();
@@ -36,11 +36,14 @@ export async function POST(request: Request): Promise<Response> {
       );
     }
 
+    // Get the count of garden items
+    const plantCount = user.gardenItems ? user.gardenItems.length : 0;
+
     return Response.json(
       {
         success: true,
         message: 'Login successful',
-        user: { id: user._id, username: user.username }
+        user: { id: user._id, username: user.username, plantCount: plantCount }
       },
       { status: 200 }
     );
@@ -51,5 +54,7 @@ export async function POST(request: Request): Promise<Response> {
       { success: false, message: 'Server error during login' },
       { status: 500 }
     );
+  } finally {
+    closeConnection();
   }
 }
