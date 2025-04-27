@@ -3,6 +3,7 @@ import {
   View, 
   Text, 
   TextInput, 
+  Image,
   StyleSheet, 
   TouchableHighlight, 
   ScrollView,
@@ -110,9 +111,9 @@ export default function AddPlant() {
       <View style={styles.plantItem}>
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
             {image_url ? (
-                <img 
-                    src={image_url} 
-                    style={{ width: 64, height: 64, marginRight: 10, borderRadius: 4 }} 
+              <Image
+              source={{ uri: image_url }}
+              style={{ width: 64, height: 64, marginRight: 10, borderRadius: 4 }}
                 />
             ) : (
                 <View style={{ width: 64, height: 64, marginRight: 10, backgroundColor: '#eee', borderRadius: 4, alignItems: 'center', justifyContent: 'center' }}>

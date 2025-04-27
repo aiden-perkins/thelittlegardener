@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Text, View, StyleSheet, TextInput, TouchableOpacity, Keyboard, ActivityIndicator, FlatList, TouchableHighlight } from 'react-native';
+import { Text, View, Image, StyleSheet, TextInput, TouchableOpacity, Keyboard, ActivityIndicator, FlatList, TouchableHighlight } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 // import styles from '../styles/Search.module.css';
 import { router } from 'expo-router';
@@ -156,8 +156,8 @@ export default function SearchScreen() {
             <View style={searchStyles.flexSpace}>
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                 {item.image_url ? (
-                    <img 
-                        src={item.image_url} 
+                    <Image 
+                        source={{uri: item.image_url}} 
                         style={{ width: 64, height: 64, marginRight: 10, borderRadius: 4 }} 
                     />
                 ) : (
