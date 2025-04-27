@@ -350,7 +350,8 @@ export default function Index() {
           onPress={pickImage}
           disabled={isLoading}
         >
-          <Text style={homeStyles.buttonText}>Add From Gallery</Text>
+          {/* <Text style={homeStyles.buttonText}>Add From Gallery</Text> */}
+          <Ionicons name="image-outline" size={36}/>
         </TouchableHighlight>
 
         <TouchableHighlight 
@@ -358,7 +359,8 @@ export default function Index() {
           onPress={openCamera}
           disabled={isLoading}
         >
-          <Text style={homeStyles.buttonText}>Use Camera</Text>
+          {/* <Text style={homeStyles.buttonText}>Use Camera</Text> */}
+          <Ionicons name="camera-outline" size={36}/>
         </TouchableHighlight>
       </View>
 
