@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
-import { Text, View, Button, Image, StyleSheet, ActivityIndicator, Alert, Platform, TouchableHighlight, FlatList } from 'react-native';
+import React, { useState, useRef } from 'react';
+import { Text, View, Button, Image, StyleSheet, ActivityIndicator, Alert, Platform, TouchableHighlight, FlatList, Modal } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import { router } from 'expo-router';
 import { API_BASE_URL } from '@/lib/config';
+import { CameraView, CameraType, useCameraPermissions } from 'expo-camera';
+import { Ionicons } from '@expo/vector-icons';
 
 const HARDCODED_PROMPT = "Tell me exactly what type of plant this is, only give me that and nothing else.";
 
@@ -11,6 +13,11 @@ export default function Index() {
   const [isLoading, setIsLoading] = useState(false);
   const [apiResponse, setApiResponse] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [cameraActive, setCameraActive] = useState(false);
+  const [cameraFacing, setCameraFacing] = useState<CameraType>('back');
+  const [showCapturePreview, setShowCapturePreview] = useState(false);
+  const [permission, requestPermission] = useCameraPermissions();
+  const cameraRef = useRef<any>(null);
 
   const pickImage = async () => {
     if (Platform.OS !== 'web') {
@@ -40,6 +47,60 @@ export default function Index() {
     }
   };
 
+  const openCamera = async () => {
+    if (!permission?.granted) {
+      const permissionResult = await requestPermission();
+      if (!permissionResult.granted) {
+        Alert.alert('Permission Denied', 'Sorry, we need camera permissions to make this work!');
+        return;
+      }
+    }
+    
+    setCameraActive(true);
+    setApiResponse(null);
+    setError(null);
+  };
+
+  const takePicture = async () => {
+    if (!cameraRef.current) return;
+    
+    try {
+      const photo = await cameraRef.current.takePictureAsync({
+        quality: 0.7,
+        shutterSound: false
+      });
+      
+      setImage({
+        uri: photo.uri,
+        width: photo.width,
+        height: photo.height,
+        assetId: null,
+        fileName: `plant_${Date.now()}.jpeg`,
+        fileSize: 0,
+        type: 'image',
+        duration: 0,
+        exif: null,
+      });
+      
+      setShowCapturePreview(true);
+      setCameraActive(false);
+    } catch (err: any) {
+      console.error('Camera capture error:', err);
+      setError(`Failed to capture image: ${err.message}`);
+      setCameraActive(false);
+    }
+  };
+
+  const retakePhoto = () => {
+    setImage(null);
+    setShowCapturePreview(false);
+    setCameraActive(true);
+  };
+
+  const confirmPhoto = () => {
+    setShowCapturePreview(false);
+  };
+
   const uploadImage = async () => {
     if (!image?.uri) {
       Alert.alert('No Image', 'Please select an image first.');
@@ -60,10 +121,19 @@ export default function Index() {
       const imageBlob = await fetchResponse.blob();
       const formData = new FormData();
 
-      const filename = image.fileName || image.uri.split('/').pop() || 'photo.jpg';
+      const filename = image.fileName || image.uri.split('/').pop() || 'photo.jpeg';
 
-      formData.append('image', imageBlob, filename);
-
+      const localUri = image.uri;
+      
+      const match = /\.(\w+)$/.exec(filename);
+      const type = match ? `image/${match[1]}` : 'image/jpeg';
+      
+      formData.append('image', {
+        uri: localUri,
+        name: filename,
+        type,
+      } as any);
+      
       const uploadResponse = await fetch(apiUrl, {
         method: 'POST',
         body: formData,
@@ -116,8 +186,42 @@ export default function Index() {
     "https://ibighit.com/txt/images/txt/main/kv-beomgyu-panic.png",
     "https://ibighit.com/txt/images/txt/main/kv-beomgyu-panic.png",
     "https://ibighit.com/txt/images/txt/main/kv-beomgyu-panic.png",
-    
   ];
+
+  if (cameraActive) {
+    return (
+      <View style={homeStyles.cameraContainer}>
+        <CameraView
+          ref={cameraRef}
+          style={homeStyles.camera}
+          facing={cameraFacing}
+        >
+          <View style={homeStyles.cameraButtonsContainer}>
+            <TouchableHighlight
+              style={homeStyles.cameraButton}
+              onPress={() => setCameraActive(false)}
+            >
+              <Ionicons name="close" size={24} color="white" />
+            </TouchableHighlight>
+            
+            <TouchableHighlight
+              style={homeStyles.cameraCaptureButton}
+              onPress={takePicture}
+            >
+              <View style={homeStyles.captureButtonInner} />
+            </TouchableHighlight>
+            
+            <TouchableHighlight
+              style={homeStyles.cameraButton}
+              onPress={() => setCameraFacing(current => (current === 'back' ? 'front' : 'back'))}
+            >
+              <Ionicons name="camera-reverse" size={24} color="white" />
+            </TouchableHighlight>
+          </View>
+        </CameraView>
+      </View>
+    );
+  }
 
   return (
     <View style={homeStyles.container}>
@@ -142,7 +246,7 @@ export default function Index() {
           <Text style={homeStyles.buttonText}>Add plant with image</Text>
       </TouchableHighlight>
 
-      <TouchableHighlight style={homeStyles.buttonContainerGreen} onPress={pickImage}>
+      <TouchableHighlight style={homeStyles.buttonContainerGreen} onPress={openCamera}>
           <Text style={homeStyles.buttonText}>Add plant with camera</Text>
       </TouchableHighlight>
 
@@ -180,6 +284,38 @@ export default function Index() {
         </View>
       )}
 
+      <Modal
+        visible={showCapturePreview}
+        transparent={false}
+        animationType="slide"
+      >
+        <View style={homeStyles.previewContainer}>
+          <Image source={{ uri: image?.uri }} style={homeStyles.previewImage} />
+          <View style={homeStyles.previewButtonsContainer}>
+            <TouchableHighlight
+              style={homeStyles.buttonContainerGray}
+              onPress={() => {
+                setShowCapturePreview(false);
+                setImage(null);
+              }}
+            >
+              <Text style={homeStyles.buttonText}>Cancel</Text>
+            </TouchableHighlight>
+            <TouchableHighlight
+              style={homeStyles.buttonContainerGray}
+              onPress={retakePhoto}
+            >
+              <Text style={homeStyles.buttonText}>Retake</Text>
+            </TouchableHighlight>
+            <TouchableHighlight
+              style={homeStyles.buttonContainerGreen}
+              onPress={confirmPhoto}
+            >
+              <Text style={homeStyles.buttonText}>Use Photo</Text>
+            </TouchableHighlight>
+          </View>
+        </View>
+      </Modal>
     </View>
   );
 }
@@ -285,5 +421,61 @@ const homeStyles = StyleSheet.create({
     marginTop: 30,
     fontSize: 16,
     color: '#888',
+  },
+  cameraContainer: {
+    flex: 1,
+    backgroundColor: 'black',
+  },
+  camera: {
+    flex: 1,
+  },
+  cameraButtonsContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-end',
+    padding: 20,
+    marginBottom: 30,
+  },
+  cameraButton: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  cameraCaptureButton: {
+    width: 70,
+    height: 70,
+    borderRadius: 35,
+    backgroundColor: 'rgba(255,255,255,0.3)',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  captureButtonInner: {
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    backgroundColor: 'white',
+  },
+  previewContainer: {
+    flex: 1,
+    backgroundColor: 'black',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  previewImage: {
+    width: '90%',
+    height: '70%',
+    resizeMode: 'contain',
+  },
+  previewButtonsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    width: '100%',
+    padding: 20,
+    position: 'absolute',
+    bottom: 30,
   },
 });
