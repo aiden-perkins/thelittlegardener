@@ -9,6 +9,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { RefreshControl } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useIsFocused } from '@react-navigation/native';
+import Svg, { Circle, Path } from 'react-native-svg';
 
 export default function Index() {
   const [image, setImage] = useState<ImagePicker.ImagePickerAsset | null>(null);
@@ -394,6 +395,26 @@ export default function Index() {
           </View>
         </View>
       </Modal>
+      {/* stars */}
+      <Svg width="24" height="24" viewBox="0 0 50 50" fill="none" style={homeStyles.star1}>
+        <Path d="M23.1243 2.069C23.7686 0.327768 26.2314 0.327775 26.8757 2.06901L32.2434 16.575C32.446 17.1224 32.8776 17.554 33.425 17.7566L47.931 23.1243C49.6722 23.7686 49.6722 26.2314 47.931 26.8757L33.425 32.2434C32.8776 32.446 32.446 32.8776 32.2434 33.425L26.8757 47.931C26.2314 49.6722 23.7686 49.6722 23.1243 47.931L17.7566 33.425C17.554 32.8776 17.1224 32.446 16.575 32.2434L2.069 26.8757C0.327768 26.2314 0.327775 23.7686 2.06901 23.1243L16.575 17.7566C17.1224 17.554 17.554 17.1224 17.7566 16.575L23.1243 2.069Z"
+          fill="#F6E54B"/>
+      </Svg>
+      <Svg width="33" height="33" viewBox="0 0 33 33" fill="none" style={homeStyles.star2}>
+        <Path d="M14.5237 1.734C14.8741 -0.523696 18.1259 -0.523687 18.4763 1.734L19.9703 11.3601C20.1039 12.2208 20.7792 12.8961 21.6399 13.0297L31.266 14.5237C33.5237 14.8741 33.5237 18.1259 31.266 18.4763L21.6399 19.9703C20.7792 20.1039 20.1039 20.7792 19.9703 21.6399L18.4763 31.266C18.1259 33.5237 14.8741 33.5237 14.5237 31.266L13.0297 21.6399C12.8961 20.7792 12.2208 20.1039 11.3601 19.9703L1.734 18.4763C-0.523696 18.1259 -0.523687 14.8741 1.734 14.5237L11.3601 13.0297C12.2208 12.8961 12.8961 12.2208 13.0297 11.3601L14.5237 1.734Z"
+          fill="#F6E54B"/>
+      </Svg>
+      <Svg width="24" height="24" viewBox="0 0 33 33" fill="none" style={homeStyles.star3}>
+        <Path d="M14.5237 1.734C14.8741 -0.523696 18.1259 -0.523687 18.4763 1.734L19.9703 11.3601C20.1039 12.2208 20.7792 12.8961 21.6399 13.0297L31.266 14.5237C33.5237 14.8741 33.5237 18.1259 31.266 18.4763L21.6399 19.9703C20.7792 20.1039 20.1039 20.7792 19.9703 21.6399L18.4763 31.266C18.1259 33.5237 14.8741 33.5237 14.5237 31.266L13.0297 21.6399C12.8961 20.7792 12.2208 20.1039 11.3601 19.9703L1.734 18.4763C-0.523696 18.1259 -0.523687 14.8741 1.734 14.5237L11.3601 13.0297C12.2208 12.8961 12.8961 12.2208 13.0297 11.3601L14.5237 1.734Z"
+          fill="#F6E54B"/>
+      </Svg>
+      {/* circles */}
+      <Svg width="33" height="33" viewBox="0 0 33 33" fill="none" style={homeStyles.circle1}>
+        <Circle cx={6} cy={6} r={6} fill="#F6E54B"/>
+      </Svg>
+      <Svg width="33" height="33" viewBox="0 0 33 33" fill="none" style={homeStyles.circle2}>
+        <Circle cx={4} cy={4} r={4} fill="#F6E54B"/>
+      </Svg>
     </View>
   );
 }
@@ -575,5 +596,35 @@ const homeStyles = StyleSheet.create({
     color: 'white',
     marginTop: 10,
     fontSize: 16
-  }
+  },
+  star3: {
+    position: 'absolute',
+    left: '7%',
+    top: '8%',
+    zIndex: 0,
+  },
+  star2: {
+    position: 'absolute',
+    right: '17%',
+    top: '5%',
+    zIndex: 0,
+  },
+  star1: {
+    position: 'absolute',
+    right: '35%',
+    top: '3%',
+    zIndex: 0,
+  },
+  circle1: {
+    position: 'absolute',
+    right: '5%',
+    top: '12%',
+    zIndex: 0,
+  },
+  circle2: {
+    position: 'absolute',
+    left: '30%',
+    top: '7%',
+    zIndex: 0,
+  },
 });
