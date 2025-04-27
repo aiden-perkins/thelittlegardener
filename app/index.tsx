@@ -292,7 +292,7 @@ export default function Index() {
 
   return (
     <View style={homeStyles.container}>
-      <Text style={homeStyles.title}>Your Garden</Text>
+      <Text style={homeStyles.title}>My Garden</Text>
 
       {isLoadingGarden ? (
         <ActivityIndicator size="large" color="#5167F2" style={{ marginTop: 20 }} />
@@ -384,17 +384,49 @@ export default function Index() {
 }
 
 const homeStyles = StyleSheet.create({
+  title: {
+    fontSize: 28,
+    fontWeight: 'bold',
+    color: '#3E51CC',
+    marginBottom: 8,
+    marginTop: 40,
+    textAlign: 'center',
+  },
+
+  imageContainer: {
+    margin: 8,
+    alignItems: 'center',
+    width: 168
+  },
+  gridImage: {
+    width: 160,
+    height: 160,
+    borderRadius: 4
+  },
+  placeholderImage: {
+    backgroundColor: '#f0f0f0',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  plantName: {
+    fontSize: 16,
+    marginTop: 4,
+    textAlign: 'center',
+    fontWeight: '600'
+  },
+
+
   container: {
     flex: 1,
     backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingTop: 50,
-    paddingBottom: 30,
+    paddingTop: 30,
+    paddingBottom: 10,
     paddingHorizontal: 15
   },
   buttonContainerYellow: {
-    backgroundColor: '#F1EB91',
+    backgroundColor: '#FAED74',
     borderRadius: 100,
     alignItems: 'center',
     justifyContent: 'center',
@@ -424,29 +456,6 @@ const homeStyles = StyleSheet.create({
     textAlign: 'center',
     paddingVertical: 5,
     paddingHorizontal: 10,
-  },
-  imageContainer: {
-    margin: 8,
-    alignItems: 'center',
-    width: 160
-  },
-  gridImage: {
-    width: 150,
-    height: 150,
-    borderRadius: 8
-  },
-  placeholderImage: {
-    backgroundColor: '#f0f0f0',
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  title: {
-    color: '#5167F2',
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 20,
-    alignSelf: 'flex-start',
-    marginLeft: 10
   },
   statusContainer: {
     marginTop: 20,
@@ -551,11 +560,5 @@ const homeStyles = StyleSheet.create({
     color: 'white',
     marginTop: 10,
     fontSize: 16
-  },
-  plantName: {
-    fontSize: 14,
-    marginTop: 4,
-    textAlign: 'center',
-    fontWeight: '500'
   }
 });
