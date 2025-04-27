@@ -81,6 +81,45 @@ export async function POST(request: Request): Promise<Response> {
         console.error(`Error reading plant cache for ID ${plantId}:`, cacheError);
         // Continue with null botanicalDetails if cache can't be read
       }
+    } else {
+        
+        // If we got here, we need to fetch from the API
+        const PERENUAL_TOKEN = process.env.PERENUAL_TOKEN;
+        
+        if (!PERENUAL_TOKEN) {
+        return Response.json(
+            { success: false, message: 'API configuration error.' },
+            { status: 500 }
+        );
+        }
+
+        const apiUrl = `https://perenual.com/api/v2/species/details/${plantId}?key=${PERENUAL_TOKEN}`;
+        
+        const response = await fetch(apiUrl);
+        
+        if (!response.ok) {
+            return Response.json(
+                { 
+                success: false, 
+                message: `Failed to fetch plant details: ${response.statusText}` 
+                },
+                { status: response.status }
+            );
+        }
+
+        const cachedData = await response.json();
+        
+        botanicalDetails = {
+          name: cachedData.name || 'N/A',
+          scientificName: cachedData.scientificName || null,
+          family: cachedData.family || null,
+          sunlight: cachedData.sunlight || [],
+          watering: determineWateringInfo(cachedData),
+          floweringSeason: cachedData.floweringSeason || null,
+          nativeArea: cachedData.origin || null,
+          description: cachedData.description || null,
+          imageUrl: cachedData.imageUrl || null
+        };
     }
 
     // Combine user's plant data with botanical details

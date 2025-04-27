@@ -6,7 +6,7 @@ const UserPlantsImagesSchema = new mongoose.Schema({
     required: [true, 'Please provide an image URL.'],
     trim: true,
   }
-});
+}, { timestamps: true });
 
 const UserPlantsSchema = new mongoose.Schema({
   custom_name: {
@@ -29,7 +29,7 @@ const UserPlantsSchema = new mongoose.Schema({
     trim: true,
   },
   plantImages: [UserPlantsImagesSchema],
-}, { _id: true });
+}, { timestamps: true, _id: true });
 
 const UserSchema = new mongoose.Schema({
   username: {
