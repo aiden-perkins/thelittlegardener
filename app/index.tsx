@@ -441,7 +441,7 @@ const homeStyles = StyleSheet.create({
     paddingHorizontal: 15
   },
   buttonContainerYellow: {
-    backgroundColor: '#F1EB91',
+    backgroundColor: '#FAED74',
     borderRadius: 100,
     alignItems: 'center',
     justifyContent: 'center',
