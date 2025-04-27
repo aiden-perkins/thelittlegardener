@@ -445,7 +445,7 @@ const styles = StyleSheet.create({
   },
 
   contentCard: {
-    backgroundColor: 'white', // White background for content area
+    backgroundColor: '#F5F7FF', 
     marginHorizontal: 8,
     borderRadius: 4,
     padding: 15,

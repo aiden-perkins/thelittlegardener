@@ -338,7 +338,7 @@ export default function Index() {
           onPress={pickImage}
           disabled={isLoading}
         >
-          <Text style={homeStyles.buttonText}>Add from Gallery</Text>
+          <Text style={homeStyles.buttonText}>Add From Gallery</Text>
         </TouchableHighlight>
 
         <TouchableHighlight 
@@ -440,7 +440,7 @@ const homeStyles = StyleSheet.create({
     borderRadius: 4
   },
   placeholderImage: {
-    backgroundColor: '#f0f0f0',
+    backgroundColor: '#F5F7FF',
     justifyContent: 'center',
     alignItems: 'center'
   },
@@ -448,7 +448,8 @@ const homeStyles = StyleSheet.create({
     fontSize: 16,
     marginTop: 4,
     textAlign: 'center',
-    fontWeight: '600'
+    fontWeight: '600',
+    color: '#3E51CC',
   },
 
 
