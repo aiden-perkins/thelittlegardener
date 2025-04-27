@@ -374,21 +374,23 @@ const styles = StyleSheet.create({
   scrollContentContainer: {
     paddingBottom: 100, // Ensure space for content above any bottom nav
   },
+
   imageContainer: {
     width: '100%',
-    height: width * 0.7, // Adjust height as needed (e.g., 70% of screen width)
+    height: width * 0.6, // Adjust height as needed (e.g., 70% of screen width)
     backgroundColor: '#FDF8E1', // Light tan/yellowish background
     alignItems: 'center',
     justifyContent: 'center',
     position: 'relative', // Needed for absolute positioning of the button
   },
   mainImage: {
-    width: '60%', // Adjust image size within the container
-    height: '80%', // Adjust image size within the container
+    width: '100%', // Adjust image size within the container
+    height: '100%', // Adjust image size within the container
     // If you want a specific shape like the glass:
     // You might need a mask or specific styling, or use the image as is.
     // For simplicity, using a standard rectangular image frame here.
   },
+
   cameraButton: {
     position: 'absolute',
     bottom: 20,
@@ -408,40 +410,44 @@ const styles = StyleSheet.create({
   customPlantName: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#3A4E5F', // Darker blue/grey
-    textAlign: 'center',
-    marginVertical: 15,
+    color: '#3E51CC',
+    textAlign: 'left',
+    margin: 16,
+    marginBottom: 10,
+    
   },
+
   tabContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
     borderBottomWidth: 1,
     borderBottomColor: '#E0E0E0',
-    paddingHorizontal: 10,
-    marginBottom: 20,
+    paddingHorizontal: 6,
+    marginBottom: 16,
   },
   tabButton: {
     paddingVertical: 10,
-    paddingHorizontal: 15,
+    paddingHorizontal: 12,
     borderBottomWidth: 3,
     borderBottomColor: 'transparent', // Default inactive state
   },
   activeTabButton: {
-    borderBottomColor: '#65C466', // Green underline for active tab
+    borderBottomColor: '#429333', // Green underline for active tab
   },
   tabText: {
-    fontSize: 16,
+    fontSize: 18,
     color: '#888', // Greyish color for inactive tabs
     fontWeight: '500',
   },
   activeTabText: {
-    color: '#333', // Darker color for active tab text
+    color: '#429333', // green color for active tab text
     fontWeight: '600',
   },
+
   contentCard: {
     backgroundColor: 'white', // White background for content area
-    marginHorizontal: 15,
-    borderRadius: 8,
+    marginHorizontal: 8,
+    borderRadius: 4,
     padding: 15,
     // Add subtle shadow/border if needed
     // borderWidth: 1,
