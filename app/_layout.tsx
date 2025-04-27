@@ -15,8 +15,6 @@ export default function RootLayout() {
           tabBarStyle: {
             paddingBottom: 0,
           },
-          tabBarButton: (props) =>
-              <Pressable {...props} android_ripple={null}/>
         }}
         >
         <Tabs.Screen
