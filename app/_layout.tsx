@@ -24,6 +24,7 @@ export default function RootLayout() {
             tabBarShowLabel: false,
             headerShown: false,
           }}
+          getId={({ params }) => `plant-${params?.plantName}-${params?.userId}`}
         />
         <Tabs.Screen
             name="search/Search"
