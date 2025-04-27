@@ -262,18 +262,18 @@ export default function SearchScreen() {
 }
 
 const searchStyles = StyleSheet.create({
+  title: {
+    fontSize: 28,
+    fontWeight: 'bold',
+    color: '#3E51CC',
+    marginTop: 60,
+    textAlign: 'center'
+  },
   screenContainer: {
     flex: 1,
     backgroundColor: 'white',
     paddingHorizontal: 15, // Reduced horizontal padding slightly
     paddingTop: 10,
-  },
-  title: {
-    fontSize: 32,
-    fontWeight: 'bold',
-    color: '#3E51CC',
-    marginTop: 60,
-    textAlign: 'center'
   },
   searchBarContainer: {
     flexDirection: 'row',
