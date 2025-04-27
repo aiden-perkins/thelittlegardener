@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, Button, Image, StyleSheet, TouchableHighlight } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Ionicons } from '@expo/vector-icons';
+import { API_BASE_URL } from '@/lib/config';
 
 export default function ProfilePage() {
   const [mode, setMode] = useState<'initial' | 'login' | 'create'>('initial');
@@ -29,7 +30,7 @@ export default function ProfilePage() {
       formData.append('username', username);
       formData.append('password', password);
       
-      const uploadResponse = await fetch('/api/login', {
+      const uploadResponse = await fetch(`${API_BASE_URL}/api/login`, {
         method: 'POST',
         body: formData
       });
@@ -56,7 +57,7 @@ export default function ProfilePage() {
       formData.append('username', username);
       formData.append('password', password);
       
-      const uploadResponse = await fetch('/api/createaccount', {
+      const uploadResponse = await fetch(`${API_BASE_URL}/api/createaccount`, {
         method: 'POST',
         body: formData
       });

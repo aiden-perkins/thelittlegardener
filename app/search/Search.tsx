@@ -3,6 +3,7 @@ import { Text, View, StyleSheet, TextInput, TouchableOpacity, Keyboard, Activity
 import { Ionicons } from '@expo/vector-icons';
 // import styles from '../styles/Search.module.css';
 import { router } from 'expo-router';
+import { API_BASE_URL } from '@/lib/config';
 
 interface Plant {
   id: number;
@@ -46,7 +47,7 @@ export default function SearchScreen() {
             const formData = new FormData();
             formData.append('page', pageToFetch.toString());
 
-            const response = await fetch('/api/browse', {
+            const response = await fetch(`${API_BASE_URL}/api/browse`, {
                 method: 'POST',
                 body: formData,
             });
@@ -87,7 +88,7 @@ export default function SearchScreen() {
             const formData = new FormData();
             formData.append('query', query);
 
-            const response = await fetch('/api/search', {
+            const response = await fetch(`${API_BASE_URL}/api/search`, {
                 method: 'POST',
                 body: formData,
             });

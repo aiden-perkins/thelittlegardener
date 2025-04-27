@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Text, View, Button, Image, StyleSheet, ActivityIndicator, Alert, Platform, TouchableHighlight, FlatList } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import { router } from 'expo-router';
+import { API_BASE_URL } from '@/lib/config';
 
 const HARDCODED_PROMPT = "Tell me exactly what type of plant this is, only give me that and nothing else.";
 
@@ -49,7 +50,7 @@ export default function Index() {
     setApiResponse(null);
     setError(null);
 
-    const apiUrl = '/api/gemini';
+    const apiUrl = `${API_BASE_URL}/api/gemini`;
 
     try {
       const fetchResponse = await fetch(image.uri);

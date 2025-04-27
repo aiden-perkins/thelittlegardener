@@ -12,6 +12,7 @@ import { useLocalSearchParams, useRouter } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Ionicons } from '@expo/vector-icons';
 import { ExternalPathString } from 'expo-router';
+import { API_BASE_URL } from '@/lib/config';
 
 export default function AddPlant() {
   const router = useRouter();
@@ -77,7 +78,7 @@ export default function AddPlant() {
       formData.append('notes', plantData.notes);
 
       // Call API to add plant to user's garden
-      const response = await fetch('/api/addplant', {
+      const response = await fetch(`${API_BASE_URL}/api/addplant`, {
         method: 'POST',
         body: formData
       });
