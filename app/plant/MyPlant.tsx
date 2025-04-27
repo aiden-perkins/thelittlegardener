@@ -9,7 +9,8 @@ import {
   Dimensions,
   ActivityIndicator,
   Alert,
-  Platform, // For loading state
+  Platform,
+  TouchableHighlight, // For loading state
 } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
@@ -26,15 +27,18 @@ interface MyPlantData {
   location?: string;
   notes?: string;
   plantImages: { image_url: string, createdAt: any }[];
-  // Botanical details fetched based on plantId
   botanicalDetails?: {
-    name: string; // Common Name
+    name: string;
     scientificName: string;
-    // Add other fields needed for the 'about' section
-    sunlight?: string[]; // Example
-    watering?: string; // Example: "Water when top inch is dry"
-    floweringSeason?: string; // Example
-    nativeArea?: string; // Example
+    family: string;
+    sunlight?: string[];
+    watering?: string;
+    floweringSeason?: string;
+    nativeArea?: string;
+    harvestMethod?: string;
+    maintenance?: string;
+    growthRate?: string;
+    fruitingSeason?: string;
   };
 }
 
@@ -52,13 +56,16 @@ export default function MyPlant() {
   const [plantData, setPlantData] = useState<MyPlantData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [activeTab, setActiveTab] = useState<'Details' | 'Care' | 'Album'>('Details');
+  const [activeTab, setActiveTab] = useState<'Details' | 'Care' | 'Album'>('Care');
+  const [healthData, setHealthData] = useState<any>(null);
+  const [healthLoading, setHealthLoading] = useState(false);
+  const [healthError, setHealthError] = useState<string | null>(null);
 
   useEffect(() => {
     setPlantData(null);
     setLoading(true);
     setError(null);
-    setActiveTab('Details');
+    setActiveTab('Care');
   }, [userID, plantName]);
   
   useEffect(() => {
@@ -103,8 +110,53 @@ export default function MyPlant() {
 
     fetchMyPlantDetails();
   }, [userID, plantName]); // Depend on userID and plantName
-
-  const handleTabPress = (tab: 'Details' | 'Care' | 'Album') => {
+  
+  const analyzeHealth = async () => {
+    if (!plantData?.plantImages || plantData.plantImages.length === 0) {
+      setHealthError('No plant images available for analysis');
+      return;
+    }
+    
+    setHealthLoading(true);
+    setHealthError(null);
+    
+    try {
+      // Get the most recent image
+      const sortedImages = [...plantData.plantImages].sort((a, b) => {
+        return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+      });
+      
+      const mostRecentImageUrl = sortedImages[0].image_url;
+      
+      // Prepare form data - send the URL instead of the image blob
+      const formData = new FormData();
+      formData.append('imageUrl', mostRecentImageUrl);
+      formData.append('plantName', plantData.custom_name);
+      formData.append('plantType', plantData.botanicalDetails?.name || 'unknown');
+      
+      // Call the API
+      const response = await fetch(`${API_BASE_URL}/api/planthealth`, {
+        method: 'POST',
+        body: formData
+      });
+      
+      const result = await response.json();
+      
+      if (result.success) {
+        setHealthData(result.data);
+      } else {
+        setHealthError(result.message || 'Failed to analyze plant health');
+        console.error("Health Analysis API Error:", result);
+      }
+    } catch (err: any) {
+      setHealthError(`Error analyzing plant health: ${err.message}`);
+      console.error("Health Analysis Error:", err);
+    } finally {
+      setHealthLoading(false);
+    }
+  };
+  
+  const handleTabPress = (tab: 'Care' | 'Details' | 'Album') => {
     setActiveTab(tab);
   };
 
@@ -274,11 +326,11 @@ export default function MyPlant() {
 
   const renderTabs = () => (
     <View style={styles.tabContainer}>
-      {['Details', 'Care', 'Album'].map((tab) => (
+      {['Care', 'Details', 'Album'].map((tab) => (
         <TouchableOpacity
           key={tab}
           style={[styles.tabButton, activeTab === tab && styles.activeTabButton]}
-          onPress={() => handleTabPress(tab as 'Details' | 'Care' | 'Album')}
+          onPress={() => handleTabPress(tab as 'Care' | 'Details' | 'Album')}
         >
           <Text style={[styles.tabText, activeTab === tab && styles.activeTabText]}>
             {tab}
@@ -295,32 +347,135 @@ export default function MyPlant() {
     const botanical = plantData.botanicalDetails;
 
     return (
-      <View style={styles.contentCard}>
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Notes</Text>
-          <Text style={styles.infoText}>{plantData.notes || 'No notes added yet.'}</Text>
-
-        {botanical && (
-          <View>
-            <Text style={styles.sectionTitle}>Common Name</Text>
-            <Text style={styles.infoText}>{botanical.name || 'N/A'}</Text>
-            <Text style={styles.sectionTitle}>Scientific Name</Text>
-            <Text style={styles.infoText}>{botanical.scientificName || 'N/A'}</Text>
-            <Text style={styles.sectionTitle}>Sunlight</Text>
-            <Text style={styles.infoText}>{botanical.sunlight?.join(', ') || 'adequate'}</Text>
+      <View>
+        <View style={styles.contentCard}>
+          <View style={styles.section}>
+            <Text style={styles.sectionTitle}>Notes:</Text>
+            <Text style={styles.infoText}>{plantData.notes || '-'}</Text>
           </View>
-        )}
-      </View>
+        </View>
+  
+        <View style={styles.contentCard}>
+          <View style={styles.section}>
+            {botanical && (
+              <View>
+                <Text style={styles.sectionTitle}>About:</Text>
+                <Text style={styles.infoText}>Common Name: {botanical.name || '-'}</Text>
+                <Text style={styles.infoText}>Scientific Name: {botanical.scientificName || '-'}</Text>
+                <Text style={styles.infoText}>Family: {botanical.family || '-'}</Text>
+                <Text style={styles.infoText}>Native Area: {botanical.nativeArea || '-'}</Text>
+              </View>
+            )}
+          </View>
+        </View>
       </View>
     );
   };
 
-  const renderCareContent = () => (
-    <View style={styles.contentCard}>
-        <Text style={styles.sectionTitle}>Care Instructions</Text>
-        <Text style={styles.infoText}>Detailed care instructions will go here.</Text>
-    </View>
-  );
+  const renderCareContent = () => {
+    if (!plantData) return null; // Don't render if no data
+  
+    const botanical = plantData.botanicalDetails;
+    
+    return (
+      <View>
+        <View style={styles.contentCard}>
+          <Text style={styles.sectionTitle}>Health Analysis:</Text>
+          
+          {healthLoading ? (
+            <View style={styles.healthLoadingContainer}>
+              <ActivityIndicator size="small" color="#5167F2" />
+              <Text style={styles.healthLoadingText}>Analyzing plant health...</Text>
+            </View>
+          ) : healthData ? (
+            <View style={styles.healthAnalysisContainer}>
+              <View style={[
+                styles.healthStatusBadge, 
+                healthData.healthStatus === 'Healthy' ? styles.healthStatusHealthy : 
+                healthData.healthStatus === 'Needs attention' ? styles.healthStatusWarning : 
+                styles.healthStatusUnhealthy
+              ]}>
+                <Text style={styles.healthStatusText}>{healthData.healthStatus}</Text>
+              </View>
+              
+              <Text style={styles.healthSummary}>{healthData.summary}</Text>
+              
+              {healthData.observations && healthData.observations.length > 0 && (
+                <View style={styles.healthSection}>
+                  <Text style={styles.healthSectionTitle}>Observations:</Text>
+                  {healthData.observations.map((observation: string, index: number) => (
+                    <Text key={index} style={styles.healthListItem}>• {observation}</Text>
+                  ))}
+                </View>
+              )}
+              
+              {healthData.issues && healthData.issues.length > 0 && (
+                <View style={styles.healthSection}>
+                  <Text style={styles.healthSectionTitle}>Issues Detected:</Text>
+                  {healthData.issues.map((issue: any, index: number) => (
+                    <View key={index} style={styles.issueItem}>
+                      <Text style={styles.issueName}>{issue.issue} - <Text style={styles.issueSeverity}>{issue.severity}</Text></Text>
+                      <Text style={styles.issueDescription}>{issue.description}</Text>
+                      {issue.causes && issue.causes.length > 0 && (
+                        <Text style={styles.issueCauses}>Potential causes: {issue.causes.join(', ')}</Text>
+                      )}
+                    </View>
+                  ))}
+                </View>
+              )}
+              
+              {healthData.recommendations && healthData.recommendations.length > 0 && (
+                <View style={styles.healthSection}>
+                  <Text style={styles.healthSectionTitle}>Recommendations:</Text>
+                  {healthData.recommendations.map((rec: string, index: number) => (
+                    <Text key={index} style={styles.healthListItem}>• {rec}</Text>
+                  ))}
+                </View>
+              )}
+              
+              {healthData.generalCare && (
+                <View style={styles.healthSection}>
+                  <Text style={styles.healthSectionTitle}>General Care:</Text>
+                  <Text style={styles.careItem}>Watering: {healthData.generalCare.watering}</Text>
+                  <Text style={styles.careItem}>Light: {healthData.generalCare.light}</Text>
+                  <Text style={styles.careItem}>Soil: {healthData.generalCare.soil}</Text>
+                </View>
+              )}
+            </View>
+          ) : (
+            <View style={styles.healthAnalysisContainer}>
+              {healthError ? (
+                <Text style={styles.healthErrorText}>{healthError}</Text>
+              ) : (
+                <Text style={styles.infoText}>Click the button below to analyze your plant's health.</Text>
+              )}
+              <TouchableHighlight 
+                style={styles.analyzeButton}
+                onPress={analyzeHealth}
+              >
+                <Text style={styles.analyzeButtonText}>Analyze Plant Health</Text>
+              </TouchableHighlight>
+            </View>
+          )}
+        </View>
+        
+        <View style={styles.contentCard}>
+          {botanical && (
+            <View>
+              <Text style={styles.sectionTitle}>Care Details:</Text>
+              <Text style={styles.infoText}>Maintenance: {botanical.maintenance || '-'}</Text>
+              <Text style={styles.infoText}>Growth Rate: {botanical.growthRate || '-'}</Text>
+              <Text style={styles.infoText}>Watering Frequency: {botanical.watering || '-'}</Text>
+              <Text style={styles.infoText}>Sunlight: {botanical.sunlight?.join(', ') || '-'}</Text>
+              <Text style={styles.infoText}>Flowering Season: {botanical.floweringSeason || '-'}</Text>
+              <Text style={styles.infoText}>Fruiting Season: {botanical.fruitingSeason || '-'}</Text>
+              <Text style={styles.infoText}>Harvest Method: {botanical.harvestMethod || '-'}</Text>
+            </View>              
+          )}
+        </View>
+      </View>
+    )
+  };
 
   const renderAlbumContent = () => {
     let sortedImages: { image_url: string; createdAt?: string }[] = [];
@@ -392,6 +547,111 @@ export default function MyPlant() {
 
 // --- Styles ---
 const styles = StyleSheet.create({
+  healthAnalysisContainer: {
+    marginTop: 8,
+  },
+  healthLoadingContainer: {
+    alignItems: 'center',
+    paddingVertical: 20,
+  },
+  healthLoadingText: {
+    marginTop: 10,
+    color: '#666',
+    fontSize: 14,
+  },
+  healthStatusBadge: {
+    alignSelf: 'flex-start',
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 20,
+    marginBottom: 10,
+  },
+  healthStatusHealthy: {
+    backgroundColor: '#C5E1A5',
+  },
+  healthStatusWarning: {
+    backgroundColor: '#FFE082',
+  },
+  healthStatusUnhealthy: {
+    backgroundColor: '#FFAB91',
+  },
+  healthStatusText: {
+    fontWeight: 'bold',
+    fontSize: 14,
+  },
+  healthSummary: {
+    fontSize: 14,
+    color: '#333',
+    marginBottom: 12,
+    lineHeight: 20,
+  },
+  healthSection: {
+    marginTop: 12,
+    marginBottom: 8,
+  },
+  healthSectionTitle: {
+    fontSize: 15,
+    fontWeight: 'bold',
+    color: '#444',
+    marginBottom: 5,
+  },
+  healthListItem: {
+    fontSize: 14,
+    color: '#444',
+    marginBottom: 5,
+    lineHeight: 20,
+    paddingLeft: 5,
+  },
+  issueItem: {
+    marginBottom: 10,
+    paddingLeft: 5,
+  },
+  issueName: {
+    fontSize: 14,
+    fontWeight: 'bold',
+    color: '#444',
+  },
+  issueSeverity: {
+    fontStyle: 'italic',
+    fontWeight: 'normal',
+  },
+  issueDescription: {
+    fontSize: 14,
+    color: '#666',
+    marginTop: 2,
+  },
+  issueCauses: {
+    fontSize: 13,
+    color: '#666',
+    fontStyle: 'italic',
+    marginTop: 2,
+  },
+  careItem: {
+    fontSize: 14,
+    color: '#444',
+    marginBottom: 3,
+    paddingLeft: 5,
+  },
+  analyzeButton: {
+    backgroundColor: '#5167F2',
+    borderRadius: 20,
+    paddingVertical: 10,
+    paddingHorizontal: 15,
+    alignSelf: 'center',
+    marginTop: 15,
+  },
+  analyzeButtonText: {
+    color: 'white',
+    fontWeight: '600',
+    fontSize: 14,
+  },
+  healthErrorText: {
+    color: '#D32F2F',
+    textAlign: 'center',
+    marginBottom: 15,
+    fontSize: 14,
+  },
+
   imageGrid: {
     flexDirection: 'row',
     flexWrap: 'wrap',
@@ -497,9 +757,10 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 0.1,
     shadowRadius: 1,
+    marginVertical: 5,
   },
   section: {
-    marginBottom: 20,
+    marginBottom: 0,
   },
   sectionTitle: {
     fontSize: 18,
