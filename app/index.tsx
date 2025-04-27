@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Text, View, Button, Image, StyleSheet, ActivityIndicator, Alert, Platform, TouchableHighlight, FlatList } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
+import { router } from 'expo-router';
 
 const HARDCODED_PROMPT = "Tell me exactly what type of plant this is, only give me that and nothing else.";
 
@@ -48,44 +49,52 @@ export default function Index() {
     setApiResponse(null);
     setError(null);
 
-    const apiUrl = '/api/gemini'; // Relative path to your API route
+    const apiUrl = '/api/gemini';
 
     try {
-      console.log("Fetching image URI:", image.uri);
       const fetchResponse = await fetch(image.uri);
       if (!fetchResponse.ok) {
           throw new Error(`Failed to fetch image file: ${fetchResponse.statusText} (status: ${fetchResponse.status})`);
       }
       const imageBlob = await fetchResponse.blob();
-      console.log("Fetched image as Blob:", imageBlob.size, "bytes, type:", imageBlob.type);
       const formData = new FormData();
-      formData.append('prompt', HARDCODED_PROMPT);
 
       const filename = image.fileName || image.uri.split('/').pop() || 'photo.jpg';
 
-      console.log(`Appending Blob to FormData with key 'image', filename: ${filename}`);
       formData.append('image', imageBlob, filename);
-
-      console.log('Uploading to:', apiUrl);
-      console.log('Sending Prompt:', HARDCODED_PROMPT);
 
       const uploadResponse = await fetch(apiUrl, {
         method: 'POST',
         body: formData,
-        headers: {
-        },
       });
       const responseData = await uploadResponse.json();
 
-      console.log('API Response Status:', uploadResponse.status);
-      console.log('API Response Data:', responseData);
+      // if the request was ok the response back should be some sort of json object from gemini
+      // we display the add plant route with the correct id recovered from gemini
+      // with the image already added
 
+      
       if (uploadResponse.ok && responseData.success) {
-        setApiResponse(responseData.data?.geminiResponse || 'No response text found.');
+        // Get the identified plant
+        const plant = responseData.data.identifiedPlant;
+        
+        // Navigate to the Add Plant page with plant details
+        router.push({
+          pathname: '/plant/AddPlant',
+          params: {
+            id: plant.id.toString(),
+            name: plant.name,
+            scientific_name: plant.scientific_name || '',
+            family: plant.family || '',
+            source: '/',
+            detected_name: plant.name, // Pass the detected name
+            confidence: plant.confidence.toString()
+          }
+        });
       } else {
         setError(responseData.message || `HTTP Error ${uploadResponse.status}`);
       }
-
+      
     } catch (err: any) {
       console.error('Upload Process Error:', err);
        if (err.message.includes('Failed to fetch image file')) {

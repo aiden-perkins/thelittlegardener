@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { Text, View, StyleSheet, TextInput, TouchableOpacity, Keyboard, ActivityIndicator, FlatList, TouchableHighlight } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 // import styles from '../styles/Search.module.css';
+import { router } from 'expo-router';
 
 interface Plant {
   id: number;
@@ -38,7 +39,6 @@ export default function SearchScreen() {
 
     const fetchBrowsePage = useCallback(async (pageToFetch: number) => {
         if (loading || pageToFetch === 0) return;
-        console.log(`Fetching browse page: ${pageToFetch}`);
         setLoading(true);
         setError(null);
 
@@ -76,7 +76,6 @@ export default function SearchScreen() {
 
     const performSearch = useCallback(async (query: string) => {
         if (!query.trim()) return;
-        console.log('Performing search for:', query);
         Keyboard.dismiss();
         setLoading(true);
         setIsSearching(true);
@@ -120,6 +119,20 @@ export default function SearchScreen() {
     const handleSearchSubmit = () => {
         performSearch(searchQuery);
     };
+    
+    const handleAddToGarden = (plant: Plant) => {
+      router.push({
+        pathname: '/plant/AddPlant',
+        params: {
+          id: plant.id.toString(),
+          name: plant.name,
+          scientific_name: plant.scientific_name || '',
+          family: plant.family || '',
+          image_url: plant.image_url || '',
+          source: '/search/Search'
+        }
+      });
+    };
 
     const handleClearSearch = () => {
         setSearchQuery('');
@@ -157,7 +170,7 @@ export default function SearchScreen() {
                     <Text style={searchStyles.plantDetail}>Family: {item.family || 'N/A'}</Text>
                 </View>
             </View>
-                <TouchableHighlight style={searchStyles.addButton} onPress={() => console.log('placeholder onpress')}>
+                <TouchableHighlight style={searchStyles.addButton} onPress={() => handleAddToGarden(item)}>
                     <Text style={searchStyles.buttonText}>Add to garden</Text>
                 </TouchableHighlight>
             </View>

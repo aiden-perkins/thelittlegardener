@@ -1,9 +1,12 @@
-import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from '@google/generative-ai';
+import { FileDataPart, GoogleGenerativeAI } from '@google/generative-ai';
+import { readFile } from 'fs/promises';
+import path from 'path';
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+const GEMINI_PLANTS_FILE_URI = 'https://generativelanguage.googleapis.com/v1beta/files/t8vox35gpwgp';
 
 if (!GEMINI_API_KEY) {
-    console.error("API Route Error: GEMINI_API_KEY environment variable not set.");
+  console.error("API Route Error: GEMINI_API_KEY environment variable not set.");
 }
 
 const genAI = GEMINI_API_KEY ? new GoogleGenerativeAI(GEMINI_API_KEY) : null;
@@ -13,10 +16,9 @@ const generationConfig = {
     temperature: 0.4,
     topP: 1,
     topK: 32,
-    maxOutputTokens: 4096,
-    // responseMimeType: "application/json", // Uncomment if needed
+    maxOutputTokens: 10000,
+    responseMimeType: "application/json",
 };
-
 
 export async function POST(request: Request): Promise<Response> {
 
@@ -30,27 +32,43 @@ export async function POST(request: Request): Promise<Response> {
 
     try {
         const formData = await request.formData();
-
         
-        const imageValue = formData.get('image'); // Get the value without immediate casting
-        const prompt = formData.get('prompt') as string | null;
+        const imageValue = formData.get('image');
+        const basePrompt = `
+        You are a plant identification assistant for a gardening app called "The Little Gardener". 
+        I will send you an image of a plant. Please analyze it and identify the most likely plant species from the provided database.
+        
+        IMPORTANT: Your response must be strictly in the following JSON format:
+        {
+          "identifiedPlant": {
+            "id": number,
+            "name": string,
+            "scientific_name": string,
+            "family": string,
+            "confidence": number (between 0-1)
+          },
+          "alternatives": [
+            {
+              "id": number,
+              "name": string,
+              "scientific_name": string,
+              "confidence": number (between 0-1)
+            }
+          ],
+          "notes": string (any useful information about the identification)
+        }
+        
+        You MUST ONLY select plants from the database provided below. Do not invent new plants or data.
+        If you're unsure, provide the closest match but indicate lower confidence.
+        
+        Database uri: ${GEMINI_PLANTS_FILE_URI}
+        `;
         
         if (!imageValue || typeof imageValue === 'string') {
             return Response.json({ success: false, message: 'No valid image file provided.' }, { status: 400 });
         }
-        if (!prompt) {
-            return Response.json({ success: false, message: 'Prompt is required.' }, { status: 400 });
-        }
         
         const imageBlob = imageValue as Blob;
-        
-        console.log("API Route: Received image candidate:", {
-            name: (imageBlob as any).name, // Access name if available (File property)
-            type: imageBlob.type,
-            size: imageBlob.size
-        });
-        console.log("API Route: Blob constructor name:", imageBlob.constructor?.name);
-        
         
         let imageBuffer: ArrayBuffer;
         try {
@@ -69,20 +87,28 @@ export async function POST(request: Request): Promise<Response> {
         const imagePart = {
             inlineData: {
                 data: base64Image,
-                mimeType: imageBlob.type || 'application/octet-stream', // Fallback needed
+                mimeType: imageBlob.type || 'application/octet-stream',
             },
         };
+        
+        // Doesnt work
+        // const databaseFilePart: FileDataPart = {
+        //     fileData: {
+        //         mimeType: 'application/json',
+        //         fileUri: GEMINI_PLANTS_FILE_URI
+        //     }
+        // };
+        
         const parts = [
-            { text: prompt },
+            { text: basePrompt },
             imagePart,
+            // databaseFilePart
         ];
         
-        console.log("API Route: Sending request to Gemini...");
         const result = await geminiModel.generateContent({
             contents: [{ role: "user", parts }],
             generationConfig,
         });
-        console.log("API Route: Received response from Gemini.");
 
         const geminiResponse = result.response;
 
@@ -96,18 +122,40 @@ export async function POST(request: Request): Promise<Response> {
         }
 
         const geminiOutputText = geminiResponse.text();
-
-        return Response.json(
-            {
-                success: true,
-                message: 'Image processed successfully by Gemini.',
-                data: {
-                    geminiResponse: geminiOutputText,
-                    receivedPrompt: prompt,
-                }
-            },
-            { status: 200 } // Explicitly set 200 OK status
-        );
+        
+        // Add this parsing logic:
+        let parsedResponse;
+        try {
+            parsedResponse = JSON.parse(geminiOutputText);
+            
+            // Validate the structure of the parsed JSON
+            if (!parsedResponse.identifiedPlant || !parsedResponse.identifiedPlant.id) {
+                throw new Error("Response missing required plant identification data");
+            }
+            
+            return Response.json(
+                {
+                    success: true,
+                    message: 'Plant identified successfully by Gemini.',
+                    data: {
+                        identifiedPlant: parsedResponse.identifiedPlant,
+                        alternatives: parsedResponse.alternatives || [],
+                        notes: parsedResponse.notes || ""
+                    }
+                },
+                { status: 200 }
+            );
+        } catch (parseError) {
+            console.error("Failed to parse Gemini response as JSON:", parseError);
+            return Response.json(
+                { 
+                    success: false, 
+                    message: 'Failed to process plant identification result.', 
+                    rawResponse: geminiOutputText 
+                },
+                { status: 422 }
+            );
+        }
 
     } catch (error: any) {
         console.error('API Route: Error processing image with Gemini:', error);
