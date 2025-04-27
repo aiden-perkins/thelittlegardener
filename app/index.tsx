@@ -258,18 +258,30 @@ export default function Index() {
       })
   };
 
-  const renderPlantItem = ({ item }: { item: any }) => (
-    <TouchableOpacity style={homeStyles.imageContainer} onPress={() => handleMyPlant(item)}>
-      {item.plantImages && item.plantImages.length > 0 ? (
-        <Image source={{ uri: item.plantImages[0].image_url }} style={homeStyles.gridImage} />
-      ) : (
-        <View style={[homeStyles.gridImage, homeStyles.placeholderImage]}>
-          <Ionicons name="leaf-outline" size={36} color="#bbb" />
-        </View>
-      )}
-      <Text style={homeStyles.plantName}>{item.custom_name}</Text>
-    </TouchableOpacity>
-  );
+  const renderPlantItem = ({ item }: { item: any }) => {
+    let imageUrl = null;
+    
+    if (item.plantImages && item.plantImages.length > 0) {
+      const sortedImages = [...item.plantImages].sort((a, b) => {
+        return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+      });
+      
+      imageUrl = sortedImages[0].image_url;
+    }
+    
+    return (
+      <TouchableOpacity style={homeStyles.imageContainer} onPress={() => handleMyPlant(item)}>
+        {imageUrl ? (
+          <Image source={{ uri: imageUrl }} style={homeStyles.gridImage} />
+        ) : (
+          <View style={[homeStyles.gridImage, homeStyles.placeholderImage]}>
+            <Ionicons name="leaf-outline" size={36} color="#bbb" />
+          </View>
+        )}
+        <Text style={homeStyles.plantName}>{item.custom_name}</Text>
+      </TouchableOpacity>
+    );
+  };
 
   if (cameraActive) {
     return (
