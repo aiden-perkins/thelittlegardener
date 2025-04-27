@@ -211,6 +211,7 @@ export default function SearchScreen() {
 
     return (
         <View style={searchStyles.screenContainer}>
+            <Text style={searchStyles.title}>Explore Plants</Text>
             <View style={searchStyles.searchBarContainer}>
                 <Ionicons
                     name="search"
@@ -220,7 +221,7 @@ export default function SearchScreen() {
                 />
                 <TextInput
                     style={searchStyles.searchInput}
-                    placeholder="Search plants by name..."
+                    placeholder="Search by name"
                     placeholderTextColor="#555"
                     value={searchQuery}
                     onChangeText={(text) => {
@@ -267,6 +268,13 @@ const searchStyles = StyleSheet.create({
     paddingHorizontal: 15, // Reduced horizontal padding slightly
     paddingTop: 10,
   },
+  title: {
+    fontSize: 32,
+    fontWeight: 'bold',
+    color: '#3E51CC',
+    marginTop: 60,
+    textAlign: 'center'
+  },
   searchBarContainer: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -275,8 +283,8 @@ const searchStyles = StyleSheet.create({
     paddingHorizontal: 15,
     paddingVertical: 8, // Adjusted padding
     width: '100%',
-    marginBottom: 15,
-    marginTop: 24
+    marginBottom: 16,
+    marginTop: 16
   },
   searchIcon: {
     marginRight: 10,
@@ -298,7 +306,8 @@ const searchStyles = StyleSheet.create({
     flex: 1,
     width: '100%',
   },
-   resultsListContent: {
+    resultsListContent: {
+        paddingTop: 5,
         paddingBottom: 20, // Add padding at the bottom of the list
     },
   plantItem: {
