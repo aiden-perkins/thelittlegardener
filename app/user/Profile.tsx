@@ -40,6 +40,7 @@ export default function ProfilePage() {
       
       if (response.success) {
         await AsyncStorage.setItem('user', JSON.stringify({ username }));
+        await AsyncStorage.setItem('triggerGardenRefresh', 'true');
         setIsLoggedIn(true);
         setError(null);
       } else {
@@ -67,6 +68,7 @@ export default function ProfilePage() {
       
       if (response.success) {
         await AsyncStorage.setItem('user', JSON.stringify({ username }));
+        await AsyncStorage.setItem('triggerGardenRefresh', 'true');
         setIsLoggedIn(true);
         setError(null);
       } else {

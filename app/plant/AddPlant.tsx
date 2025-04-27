@@ -28,9 +28,9 @@ export default function AddPlant() {
   const goBackTo = params.source as ExternalPathString;
 
   const [plantData, setPlantData] = useState({
-    name: params.name || '',
-    scientificName: params.scientific_name || '',
-    family: params.family || '',
+    name: name || '',
+    scientificName: scientific_name || '',
+    family: family || '',
     imageUrl: image_url || '',
     customName: '', // This will be the custom_name in the UserPlants schema
     location: '',
@@ -72,7 +72,8 @@ export default function AddPlant() {
       const formData = new FormData();
       formData.append('username', user.username);
       formData.append('custom_name', plantData.customName);
-      formData.append('plantId', id || '0');
+      const currentPlantId = params.id as string | undefined;
+      formData.append('plantId', currentPlantId || '');
       formData.append('location', plantData.location);
       formData.append('notes', plantData.notes);
       const currentImageUrl = params.image_url as string | undefined;
