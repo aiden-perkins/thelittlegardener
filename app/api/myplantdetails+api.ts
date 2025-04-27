@@ -61,10 +61,13 @@ export async function POST(request: Request): Promise<Response> {
     const cacheDir = path.join(process.cwd(), 'cache', 'plant-details');
     const cacheFilePath = path.join(cacheDir, `${plantId}.json`);
     
+    let temp: any | null = null;
+
     if (existsSync(cacheFilePath)) {
       try {
         const cachedContent = await readFile(cacheFilePath, 'utf-8');
         const cachedData = JSON.parse(cachedContent);
+        temp = cachedData;
         
         botanicalDetails = {
           name: cachedData.name || 'N/A',
@@ -108,6 +111,7 @@ export async function POST(request: Request): Promise<Response> {
         }
 
         const cachedData = await response.json();
+        temp = cachedData;
         
         botanicalDetails = {
           name: cachedData.name || 'N/A',
@@ -125,7 +129,8 @@ export async function POST(request: Request): Promise<Response> {
     // Combine user's plant data with botanical details
     const combinedPlantData = {
       ...userPlant.toObject(),
-      botanicalDetails
+      botanicalDetails,
+      temp
     };
 
     return Response.json(
